@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+assets/_frames/
+.DS_Store
