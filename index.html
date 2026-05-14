@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KAIROS · Platinum Response in HGSOC</title>
+  <title>Predicting Platinum Response in HGSOC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -29,139 +31,34 @@
       width: 100%;
     }
 
-    /* Full-bleed hero with animated H&E tissue background */
+    /* Full-bleed hero: clean text on a plain background */
     .hero-full {
       position: relative;
       width: 100vw;
       left: 50%;
       margin-left: -50vw;
-      padding: 160px 32px 72px;
-      overflow: hidden;
-      isolation: isolate;
+      padding: 128px 32px 64px;
       margin-bottom: 24px;
     }
 
     .hero-content {
       max-width: 680px;
       margin: 0 auto;
+    }
+
+    /* Full-bleed email signup with animated H&E video background */
+    .signup-full {
       position: relative;
-      z-index: 2;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      margin-top: 72px;
+      padding: 96px 32px 104px;
+      overflow: hidden;
+      isolation: isolate;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: -20%;
-      background-color: #e8a0b8;
-      background-image:
-        /* scattered hematoxylin-stained nuclei */
-        radial-gradient(circle at 5% 7%, #2a1a4a 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 9% 14%, #3d2960 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 13% 5%, #2a1842 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 17% 11%, #342054 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 21% 18%, #4d3470 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 25% 4%, #2a1a4a 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 29% 13%, #3d2960 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 33% 20%, #2a1842 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 37% 7%, #342054 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 41% 15%, #4d3470 0 0.33%, transparent 0.43%),
-        radial-gradient(circle at 45% 22%, #2a1a4a 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 49% 9%, #3d2960 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 53% 17%, #2a1842 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 57% 5%, #342054 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 61% 13%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 65% 21%, #2a1a4a 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 69% 8%, #3d2960 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 73% 16%, #2a1842 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 77% 4%, #342054 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 81% 12%, #4d3470 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 85% 19%, #2a1a4a 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 89% 6%, #3d2960 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 93% 14%, #2a1842 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 97% 22%, #342054 0 0.3%, transparent 0.4%),
-        /* row 2 */
-        radial-gradient(circle at 3% 30%, #2a1a4a 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 7% 38%, #4d3470 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 11% 27%, #3d2960 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 15% 43%, #2a1842 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 19% 32%, #342054 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 23% 40%, #2a1a4a 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 27% 29%, #4d3470 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 31% 37%, #3d2960 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 35% 45%, #2a1842 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 39% 31%, #342054 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 43% 39%, #2a1a4a 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 47% 28%, #4d3470 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 51% 42%, #3d2960 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 55% 30%, #2a1842 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 59% 38%, #342054 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 63% 44%, #2a1a4a 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 67% 32%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 71% 40%, #3d2960 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 75% 28%, #2a1842 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 79% 36%, #342054 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 83% 44%, #2a1a4a 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 87% 31%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 91% 39%, #3d2960 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 95% 28%, #2a1842 0 0.32%, transparent 0.42%),
-        /* row 3 */
-        radial-gradient(circle at 4% 54%, #2a1a4a 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 9% 62%, #3d2960 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 14% 50%, #4d3470 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 18% 66%, #2a1842 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 22% 55%, #342054 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 27% 64%, #2a1a4a 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 32% 52%, #3d2960 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 36% 60%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 40% 68%, #2a1842 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 45% 55%, #342054 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 50% 63%, #2a1a4a 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 54% 51%, #3d2960 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 58% 65%, #4d3470 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 63% 54%, #2a1842 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 67% 62%, #342054 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 72% 50%, #2a1a4a 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 76% 67%, #3d2960 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 81% 55%, #4d3470 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 85% 63%, #2a1842 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 90% 52%, #342054 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 94% 66%, #2a1a4a 0 0.35%, transparent 0.45%),
-        /* row 4 */
-        radial-gradient(circle at 6% 76%, #3d2960 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 12% 85%, #2a1842 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 17% 74%, #342054 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 23% 90%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 28% 79%, #2a1a4a 0 0.38%, transparent 0.48%),
-        radial-gradient(circle at 34% 87%, #3d2960 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 39% 75%, #2a1842 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 44% 92%, #342054 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 50% 80%, #4d3470 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 56% 88%, #2a1a4a 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 61% 76%, #3d2960 0 0.45%, transparent 0.55%),
-        radial-gradient(circle at 67% 90%, #2a1842 0 0.3%, transparent 0.4%),
-        radial-gradient(circle at 72% 78%, #342054 0 0.4%, transparent 0.5%),
-        radial-gradient(circle at 78% 86%, #4d3470 0 0.35%, transparent 0.45%),
-        radial-gradient(circle at 84% 75%, #2a1a4a 0 0.42%, transparent 0.52%),
-        radial-gradient(circle at 89% 91%, #3d2960 0 0.32%, transparent 0.42%),
-        radial-gradient(circle at 95% 82%, #2a1842 0 0.38%, transparent 0.48%),
-        /* eosin-stained cytoplasm base - warm pink with organic variation */
-        radial-gradient(ellipse 40% 30% at 20% 35%, #f0b5c9 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 75% 25%, #e89bb4 0%, transparent 70%),
-        radial-gradient(ellipse 35% 50% at 50% 70%, #e8a0b8 0%, transparent 65%),
-        radial-gradient(ellipse 45% 35% at 15% 80%, #dc8aa3 0%, transparent 70%),
-        radial-gradient(ellipse 40% 45% at 85% 75%, #e89bb4 0%, transparent 70%),
-        linear-gradient(135deg, #f4b8cc 0%, #e89bb4 50%, #dc8aa3 100%);
-      filter: blur(1.2px) saturate(1.08);
-      animation: heZoom 55s ease-in-out infinite alternate;
-      z-index: 0;
-      will-change: transform;
-    }
-
-    @keyframes heZoom {
-      0%   { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(2.4) translate(-6%, -4%); }
-    }
-
-    .hero-video {
+    .signup-video {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -171,9 +68,10 @@
       pointer-events: none;
     }
 
-    .hero-fade {
+    .signup-fade {
       position: absolute;
       inset: 0;
+      /* soft scrim: fades the H&E video back like the original hero */
       background:
         radial-gradient(ellipse 75% 85% at center,
           rgba(253, 252, 250, 0.55) 0%,
@@ -184,8 +82,84 @@
       pointer-events: none;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .hero-bg { animation: none; }
+    .signup-content {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .signup-hook {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #1a1a1a;
+      margin: 14px 0 12px;
+    }
+
+    .signup-sub {
+      font-size: 16px;
+      color: #4a5260;
+      max-width: 460px;
+      margin: 0 auto 28px;
+    }
+
+    .signup-form {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .signup-form input[type="email"] {
+      flex: 1;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1px solid #d4d0c8;
+      border-radius: 8px;
+      background: #fdfcfa;
+      color: #1a1a1a;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .signup-form input[type="email"]:focus {
+      border-color: #1e3a5e;
+    }
+
+    .signup-form button {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #1e3a5e;
+      color: #fdfcfa;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s ease;
+    }
+
+    .signup-form button:hover { opacity: 0.85; }
+
+    .signup-thanks {
+      display: none;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-size: 19px;
+      color: #1e3a5e;
+    }
+
+    .signup-form.sent { display: none; }
+    .signup-form.sent + .signup-thanks { display: block; }
+
+    @media (max-width: 600px) {
+      .signup-form { flex-direction: column; }
     }
 
     /* Scroll-reveal animations */
@@ -249,15 +223,6 @@
       line-height: 1.55;
       margin-bottom: 20px;
       max-width: 600px;
-    }
-
-    .tagline {
-      font-family: 'Fraunces', Georgia, serif;
-      font-style: italic;
-      font-size: 19px;
-      color: #1e3a5e;
-      margin-top: 12px;
-      letter-spacing: -0.005em;
     }
 
     p {
@@ -390,6 +355,27 @@
       font-size: 12px;
       color: #8a8578;
       margin-top: 4px;
+    }
+
+    /* Institution logos — normalized into a uniform bounding box.
+       mix-blend-mode: multiply drops the white box on logos that ship
+       without transparency (e.g. OHSU Knight) against the cream cards. */
+    .partner-logo {
+      max-width: 100%;
+      max-height: 46px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    /* Text fallback shown when a logo file isn't present yet */
+    .partner-fallback {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 16px;
+      color: #1a1a1a;
+      line-height: 1.25;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -646,16 +632,23 @@
       letter-spacing: -0.005em;
     }
 
-    .why-closer-lede {
+    /* Per-section call-to-action linking down to the email form */
+    .section-cta {
+      display: inline-block;
+      margin-top: 28px;
       font-family: 'Inter', -apple-system, sans-serif;
-      font-style: normal;
-      font-size: 15.5px;
-      color: #4a5260;
-      line-height: 1.6;
-      max-width: 540px;
-      margin: 0 auto 22px;
-      letter-spacing: 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: #1e3a5e;
+      text-decoration: none;
+      border-bottom: 1px solid #c2cedd;
+      padding-bottom: 3px;
+      transition: border-color 0.15s ease;
     }
+
+    .section-cta:hover { border-color: #1e3a5e; }
+
+    .cta-center { text-align: center; }
 
     .sponsors {
       margin-top: 64px;
@@ -837,15 +830,6 @@
       border-top: 1px solid #ebe7df;
     }
 
-    .evidence-intro {
-      font-size: 15.5px;
-      color: #4a5260;
-      line-height: 1.6;
-      margin-top: 14px;
-      margin-bottom: 24px;
-      max-width: 600px;
-    }
-
     .pubs-list {
       display: flex;
       flex-direction: column;
@@ -942,30 +926,13 @@
 <body>
   <main>
     <section class="hero-full">
-      <div class="hero-bg"></div>
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/wsi-poster.jpg">
-        <source src="assets/wsi-zoom.mp4" type="video/mp4">
-      </video>
-      <div class="hero-fade"></div>
       <div class="hero-content">
-        <div class="brand">
-          <div class="brand-name">KAIROS</div>
-          <div class="brand-meaning">/ˈkaɪrɒs/ · <em>the opportune moment</em></div>
-        </div>
-
         <h1>A consortium to predict <em>platinum response</em> in high-grade serous ovarian cancer.</h1>
 
         <p class="lede">
-          One in five HGSOC patients won't respond to platinum. New therapies are here, from PARP inhibitors to ADCs to immunotherapy. Matching patients to them needs a biomarker we can trust.
+          A multimodal foundation model built by leading cancer centers, trained on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients.
         </p>
-
-        <p>
-          KAIROS is that biomarker: a multimodal foundation model trained on H&amp;E histology, genomics, and clinical data. Built by leading cancer centers. Our goal: pool 10,000 HGSOC patients to train it, together.
-        </p>
-
-        <p class="tagline">
-          Digital personalised medicine, at scale.
-        </p>
+        <a class="section-cta" href="#join">Join the consortium →</a>
       </div>
     </section>
 
@@ -986,57 +953,47 @@
         </div>
       </div>
       <div class="why-closer">
-        <div class="why-closer-lede">No single center has 10,000 HGSOC cases. A biomarker that generalizes needs pooling — across institutions, across borders.</div>
         We reach 10,000 together. Or we don't.
       </div>
+      <div class="cta-center"><a class="section-cta" href="#join">Add your cohort →</a></div>
     </div>
 
     <div class="partners reveal">
       <div class="partners-label">Founding institutions</div>
       <div class="partners-grid">
-        <div class="partner">
-          <div class="partner-name">Dana-Farber</div>
-          <div class="partner-sub">Cancer Institute</div>
+        <div class="partner" title="Dana-Farber Cancer Institute">
+          <img class="partner-logo" src="assets/logos/dana-farber.svg" alt="Dana-Farber Cancer Institute" data-name="Dana-Farber Cancer Institute">
         </div>
-        <div class="partner">
-          <div class="partner-name">Brigham &amp; Women's</div>
-          <div class="partner-sub">Hospital</div>
+        <div class="partner" title="Brigham &amp; Women's Hospital">
+          <img class="partner-logo" src="assets/logos/brigham.svg" alt="Brigham &amp; Women's Hospital" data-name="Brigham &amp; Women's Hospital">
         </div>
-        <div class="partner">
-          <div class="partner-name">Boston Children's</div>
-          <div class="partner-sub">Hospital</div>
+        <div class="partner" title="Boston Children's Hospital">
+          <img class="partner-logo" src="assets/logos/boston-childrens.svg" alt="Boston Children's Hospital" data-name="Boston Children's Hospital">
         </div>
-        <div class="partner">
-          <div class="partner-name">Mass General</div>
-          <div class="partner-sub">Hospital</div>
+        <div class="partner" title="Massachusetts General Hospital">
+          <img class="partner-logo" src="assets/logos/mass-general.svg" alt="Massachusetts General Hospital" data-name="Mass General Hospital">
         </div>
-        <div class="partner">
-          <div class="partner-name">Harvard Medical School</div>
-          <div class="partner-sub">Pathology</div>
+        <div class="partner" title="Harvard Medical School">
+          <img class="partner-logo" src="assets/logos/harvard-ms.svg" alt="Harvard Medical School" data-name="Harvard Medical School">
         </div>
-        <div class="partner">
-          <div class="partner-name">Peter MacCallum</div>
-          <div class="partner-sub">Australia</div>
+        <div class="partner" title="Peter MacCallum Cancer Centre">
+          <img class="partner-logo" src="assets/logos/peter-mac.png" alt="Peter MacCallum Cancer Centre" data-name="Peter MacCallum">
         </div>
-        <div class="partner">
-          <div class="partner-name">Semmelweis University</div>
-          <div class="partner-sub">Hungary</div>
+        <div class="partner" title="Semmelweis University">
+          <img class="partner-logo" src="assets/logos/semmelweis.svg" alt="Semmelweis University" data-name="Semmelweis University">
         </div>
-        <div class="partner">
-          <div class="partner-name">Knight Cancer Institute</div>
-          <div class="partner-sub">OHSU</div>
+        <div class="partner" title="OHSU Knight Cancer Institute">
+          <img class="partner-logo" src="assets/logos/ohsu-knight.png" alt="OHSU Knight Cancer Institute" data-name="Knight Cancer Institute">
         </div>
         <div class="partner">
           <div class="partner-name" style="color: #8a8578;">+ your institution</div>
         </div>
       </div>
+      <a class="section-cta" href="#join">Add your institution →</a>
     </div>
 
     <div class="evidence reveal">
       <div class="partners-label">Evidence</div>
-      <p class="evidence-intro">
-        We don't ask institutions to share data on faith. Our group's peer-reviewed work on computational pathology and HGSOC outcome prediction is public.
-      </p>
       <div class="pubs-list">
         <a class="pub" href="https://www.nature.com/articles/s41698-025-00808-w" target="_blank" rel="noopener">
           <div class="pub-meta">npj Precision Oncology · 2025</div>
@@ -1044,6 +1001,7 @@
           <div class="pub-link">Read paper →</div>
         </a>
       </div>
+      <a class="section-cta" href="#join">Partner with us →</a>
     </div>
 
     <div class="stats reveal">
@@ -1065,6 +1023,7 @@
           <div class="stat-bar"><div class="stat-bar-fill" style="--pct: 11.3%;"></div></div>
         </div>
       </div>
+      <a class="section-cta" href="#join">Help us reach 10,000 →</a>
     </div>
 
     <div class="governance reveal">
@@ -1083,26 +1042,27 @@
           <div class="gov-body">Template DTA, IRB protocol language, and a HIPAA-compliant pipeline on day one. The legal groundwork is done.</div>
         </div>
       </div>
+      <a class="section-cta" href="#join">Start the conversation →</a>
     </div>
 
 <div class="ways reveal">
       <div class="partners-label">Ways to participate</div>
       <div class="ways-grid">
-        <a class="way" href="mailto:Oz.Kilim@childrens.harvard.edu?subject=Joining%20KAIROS">
+        <a class="way" href="#join">
           <div class="way-num">01</div>
           <div class="way-title">Join the consortium</div>
           <div class="way-desc">Become a founding partner. Co-develop the foundation model. Co-author the science.</div>
           <div class="way-link">Become a partner →</div>
         </a>
 
-        <a class="way" href="mailto:Oz.Kilim@childrens.harvard.edu?subject=Contributing%20a%20Cohort">
+        <a class="way" href="#join">
           <div class="way-num">02</div>
           <div class="way-title">Add your cohort</div>
           <div class="way-desc">Bring your HGSOC patients into the 10,000. More data in, stronger model out. Shared credit, shared model.</div>
           <div class="way-link">Share a cohort →</div>
         </a>
 
-        <a class="way" href="mailto:Oz.Kilim@childrens.harvard.edu?subject=Federated%20Validation">
+        <a class="way" href="#join">
           <div class="way-num">03</div>
           <div class="way-title">Validate locally</div>
           <div class="way-desc">Run the model on your cohort. No data leaves your site. We ship the container, you return the metrics.</div>
@@ -1132,20 +1092,41 @@
       </div>
     </div>
 
-    <div class="contact reveal">
-      <div class="partners-label">Or just say hi</div>
-      <a href="mailto:Oz.Kilim@childrens.harvard.edu">Oz.Kilim@childrens.harvard.edu →</a>
-    </div>
-
     <div class="sponsors reveal">
       <div class="partners-label">Supported by</div>
       <div class="sponsors-row">
         <div class="sponsor">Ovarian Cancer Research Alliance</div>
       </div>
     </div>
+
+    <section class="signup-full reveal" id="join">
+      <video class="signup-video" autoplay muted loop playsinline preload="auto" poster="assets/wsi-poster.jpg">
+        <source src="assets/wsi-zoom.mp4" type="video/mp4">
+      </video>
+      <div class="signup-fade"></div>
+      <div class="signup-content">
+        <div class="partners-label">Join the consortium</div>
+        <h2 class="signup-hook">Bring your cohort into the 10,000.</h2>
+        <p class="signup-sub">Leave your email and we'll be in touch about becoming a partner, contributing a cohort, or running federated validation at your site.</p>
+
+        <!-- EMAIL COLLECTION: wired to the consortium Google Form.
+             Submissions land in that form's responses / linked Google Sheet.
+             Form: docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ
+             Email field: entry.1953270115 -->
+        <form class="signup-form"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ/formResponse"
+              method="POST" target="gform-sink">
+          <input type="email" name="entry.1953270115" required
+                 placeholder="you@institution.edu" aria-label="Email address" />
+          <button type="submit">Get more information →</button>
+        </form>
+        <div class="signup-thanks">Thanks, we'll be in touch shortly.</div>
+        <iframe name="gform-sink" title="form sink" style="display:none"></iframe>
+      </div>
+    </section>
   </main>
 
-  <footer>KAIROS · Boston, MA</footer>
+  <footer>Boston, MA</footer>
 
   <script>
     (function() {
@@ -1191,6 +1172,37 @@
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
       targets.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
+
+  <script>
+    // Email signup: posts into the hidden iframe so the page never navigates,
+    // then optimistically swaps the form for a thank-you (the cross-origin
+    // Google Forms response isn't readable, so we can't verify server-side).
+    (function() {
+      var form = document.querySelector('.signup-form');
+      if (!form) return;
+      form.addEventListener('submit', function() {
+        setTimeout(function() { form.classList.add('sent'); }, 200);
+      });
+    })();
+  </script>
+
+  <script>
+    // Partner logos: if a logo file isn't present yet (slots still to be
+    // supplied), fall back to the institution name as styled text so the
+    // grid never shows a broken image.
+    (function() {
+      document.querySelectorAll('.partner-logo').forEach(function(img) {
+        function fallback() {
+          var span = document.createElement('span');
+          span.className = 'partner-fallback';
+          span.textContent = img.getAttribute('data-name') || img.alt;
+          img.replaceWith(span);
+        }
+        img.addEventListener('error', fallback);
+        if (img.complete && img.naturalWidth === 0) fallback();
+      });
     })();
   </script>
 </body>
