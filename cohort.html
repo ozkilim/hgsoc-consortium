@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimum Viable Cohort · HGSOC Consortium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    /* cohort.html — page-specific styles only; shared design lives in styles.css */
+
+    .doc-top {
+      padding-top: 32px;
+      margin-bottom: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 13.5px;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .back-link:hover { color: #1a1a1a; }
+
+    .doc-intro {
+      padding-top: 56px;
+    }
+
+    .doc-intro h1 { margin-bottom: 24px; }
+
+    .reqs {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid #ebe7df;
+    }
+
+    .reqs-intro {
+      margin-top: 14px;
+      margin-bottom: 4px;
+      font-size: 15.5px;
+      color: #4a5260;
+      line-height: 1.6;
+    }
+
+    .reqs-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .req {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .req-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 15px;
+      color: #8a8578;
+      text-align: right;
+      line-height: 1.55;
+    }
+
+    .req-body {
+      font-size: 16px;
+      color: #1a1a1a;
+      line-height: 1.55;
+    }
+
+    .req-body strong {
+      font-weight: 500;
+      color: #1e3a5e;
+    }
+
+    .table-wrap {
+      margin-top: 24px;
+      overflow-x: auto;
+      border: 1px solid #ebe7df;
+      border-radius: 10px;
+      background: #fdfcfa;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13.5px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #ebe7df;
+      white-space: nowrap;
+    }
+
+    .data-table th {
+      font-weight: 500;
+      color: #6b7280;
+      background: #faf7f1;
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .data-table tbody tr:last-child td { border-bottom: none; }
+
+    .data-table td {
+      color: #1a1a1a;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .data-table .muted { color: #8a8578; }
+
+    .data-table .case-cell {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 14px;
+      color: #1e3a5e;
+    }
+
+    .footnote {
+      margin-top: 28px;
+      padding: 22px 24px;
+      background: #faf7f1;
+      border-left: 3px solid #1e3a5e;
+      border-radius: 0 8px 8px 0;
+      font-size: 13.5px;
+      color: #4a5260;
+      line-height: 1.65;
+    }
+
+    .footnote-star {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #1e3a5e;
+      font-weight: 500;
+      margin-right: 4px;
+    }
+
+    .footnote strong {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    .end-cta {
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid #ebe7df;
+      text-align: center;
+    }
+
+    .end-cta .partners-label {
+      margin-bottom: 18px;
+    }
+
+    .end-cta p {
+      font-size: 16px;
+      color: #4a5260;
+      max-width: 460px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .req { grid-template-columns: 28px 1fr; gap: 12px; }
+      .data-table th,
+      .data-table td { padding: 10px 12px; font-size: 12.5px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="doc-top">
+      <a class="back-link" href="index.html">← Back to consortium</a>
+    </div>
+
+    <div class="doc-intro">
+      <div class="partners-label">Minimum Viable Cohort</div>
+      <h1>What's the minimum needed to join?</h1>
+      <p class="lede">
+        We keep the bar deliberately low so any HGSOC center can contribute. A founding-quality cohort is a small, well-characterized set of cases that the model can actually learn from.
+      </p>
+    </div>
+
+    <div class="reqs reveal">
+      <div class="partners-label">Cohort &amp; slides</div>
+      <ul class="reqs-list">
+        <li class="req">
+          <span class="req-num">01</span>
+          <span class="req-body"><strong>At least 50 HGSOC cases.</strong> More is better, but 50 is the floor for a meaningful contribution to the foundation model.</span>
+        </li>
+        <li class="req">
+          <span class="req-num">02</span>
+          <span class="req-body"><strong>H&amp;E whole-slide images, stained within the last 5 years.</strong> Stain quality has the biggest single effect on model performance, so recent slides keep batch variability in check.</span>
+        </li>
+        <li class="req">
+          <span class="req-num">03</span>
+          <span class="req-body"><strong>One slide from the primary tumor, and one from a metastatic site where available.</strong> Two-site cases let the model learn intra-patient heterogeneity.</span>
+        </li>
+        <li class="req">
+          <span class="req-num">04</span>
+          <span class="req-body"><strong>From primary debulking surgery (PDS), with no neoadjuvant chemotherapy.</strong> Treatment-naive tissue only, so the model learns underlying biology rather than chemo-induced morphology.</span>
+        </li>
+        <li class="req">
+          <span class="req-num">05</span>
+          <span class="req-body"><strong>Scanned at 40× magnification</strong> (~0.25 µm/pixel). 20× scans work as a fallback if 40× isn't available, but 40× is the target.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reqs reveal">
+      <div class="partners-label">Clinical fields</div>
+      <p class="reqs-intro">
+        Five fields per case. The first four are required; HRD score is optional but materially improves model performance where available.
+      </p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>case_id</th>
+              <th>slide_id</th>
+              <th>age at debulking</th>
+              <th>relapse<sup>*</sup></th>
+              <th>time to relapse (mo)</th>
+              <th>HRD score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="case-cell">OV-001</td><td>OV-001-P</td><td>62</td><td>1</td><td>14</td><td>72</td></tr>
+            <tr><td class="case-cell">OV-001</td><td>OV-001-M</td><td>62</td><td>1</td><td>14</td><td>72</td></tr>
+            <tr><td class="case-cell">OV-002</td><td>OV-002-P</td><td>58</td><td>0</td><td class="muted">NA</td><td>41</td></tr>
+            <tr><td class="case-cell">OV-003</td><td>OV-003-P</td><td>71</td><td>1</td><td>8</td><td>65</td></tr>
+            <tr><td class="case-cell">OV-003</td><td>OV-003-M</td><td>71</td><td>1</td><td>8</td><td>65</td></tr>
+            <tr><td class="case-cell">OV-004</td><td>OV-004-P</td><td>49</td><td>1</td><td>22</td><td>88</td></tr>
+            <tr><td class="case-cell">OV-005</td><td>OV-005-P</td><td>66</td><td>0</td><td class="muted">NA</td><td>18</td></tr>
+            <tr><td class="case-cell">OV-006</td><td>OV-006-P</td><td>74</td><td>1</td><td>5</td><td class="muted">—</td></tr>
+            <tr><td class="case-cell">OV-006</td><td>OV-006-M</td><td>74</td><td>1</td><td>5</td><td class="muted">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footnote">
+        <span class="footnote-star">*</span><strong>Relapse</strong> follows the standard <strong>GCIG</strong> (Gynecologic Cancer Intergroup) definition: the earliest of (a) radiologic progression by RECIST 1.1, (b) CA-125 elevation meeting Rustin criteria — CA-125 ≥ 2× the upper limit of normal confirmed on a second sample at least one week later, or doubling from nadir in patients whose CA-125 normalized, or (c) clinical / symptomatic progression. <strong>Time to relapse</strong> is measured in months from the date of completion of first-line platinum-based chemotherapy.
+      </div>
+    </div>
+
+    <div class="end-cta reveal">
+      <div class="partners-label">Ready?</div>
+      <p>If your cohort meets the floor — or you'd like to discuss how close yours is — leave us your email and we'll set up a call.</p>
+      <a class="section-cta" href="index.html#join">Get more information →</a>
+    </div>
+  </main>
+
+  <footer>Boston, MA</footer>
+
+  <script>
+    // Re-use the reveal-on-scroll behavior from the main page.
+    (function() {
+      var targets = document.querySelectorAll('.reveal');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        targets.forEach(function(el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      targets.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
