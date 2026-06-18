@@ -170,10 +170,58 @@
       line-height: 1.6;
     }
 
+    /* Slide-selection cards */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .guide {
+      background: #fdfcfa;
+      border: 1px solid #ebe7df;
+      border-radius: 10px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .guide-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1e3a5e;
+      background: rgba(30, 58, 94, 0.08);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .guide-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .guide-body {
+      font-size: 14px;
+      color: #4a5260;
+      line-height: 1.6;
+    }
+
+    .guide-body strong {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
     @media (max-width: 600px) {
       .req { grid-template-columns: 28px 1fr; gap: 12px; }
       .data-table th,
       .data-table td { padding: 10px 12px; font-size: 12.5px; }
+      .guide-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -215,6 +263,28 @@
           <span class="req-body"><strong>Scanned at 40× magnification</strong> (~0.25 µm/pixel). 20× scans work as a fallback if 40× isn't available, but 40× is the target.</span>
         </li>
       </ul>
+    </div>
+
+    <div class="reqs reveal">
+      <div class="partners-label">Pulling slides</div>
+      <p class="reqs-intro">
+        Practical guidance from the pathology side on which slides to pull from each case.
+      </p>
+      <div class="guide-grid">
+        <div class="guide">
+          <div class="guide-tag">Priority</div>
+          <div class="guide-title">Non-NACT (PDS) cases</div>
+          <div class="guide-body">
+            Use <strong>pre-treatment resection slides only</strong>, never biopsies. If there are no metastases, take the single slide with the highest tumor percentage. If metastases are present, take at least one <strong>adnexal slide</strong> plus at least one <strong>metastasis slide</strong>. Prioritize omentum mets, but include multiple metastatic sites when they appear morphologically different to the eye.
+          </div>
+        </div>
+        <div class="guide">
+          <div class="guide-title">NACT cases</div>
+          <div class="guide-body">
+            Take the <strong>pre-treatment biopsy</strong> and the <strong>post-treatment resection</strong>.
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="reqs reveal">
