@@ -912,7 +912,7 @@ footer {
   .gov-grid { grid-template-columns: 1fr; }
 }
 
-/* Worldwide effort — map with one dot per founding-institution city */
+/* Worldwide effort: interactive Leaflet map with one dot per city */
 .worldmap {
   margin-top: 64px;
   padding-top: 40px;
@@ -940,55 +940,74 @@ footer {
 .world-map {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  background: #fdfcfa;
+  height: clamp(360px, 56vw, 540px);
+  background: #faf7f1;
   border: 1px solid #ebe7df;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.world-map-bg {
+/* Leaflet overrides: match the editorial palette */
+.world-map .leaflet-container {
+  background: #faf7f1;
+  font-family: 'Inter', -apple-system, sans-serif;
+  outline: none;
+}
+
+.world-map .leaflet-control-attribution {
+  background: rgba(253, 252, 250, 0.85);
+  font-size: 10px;
+  color: #6b7280;
+  padding: 2px 6px;
+}
+
+.world-map .leaflet-control-attribution a {
+  color: #1e3a5e;
+}
+
+.world-map .leaflet-control-zoom a {
+  background: #fdfcfa;
+  color: #1a1a1a;
+  border-color: #d4d0c8;
+}
+
+.world-map .leaflet-control-zoom a:hover {
+  background: #f7f3ea;
+}
+
+.world-map .leaflet-tooltip {
+  background: #1a1a1a;
+  color: #fdfcfa;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-family: 'Inter', -apple-system, sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  white-space: normal;
+  max-width: 260px;
+}
+
+.world-map .leaflet-tooltip strong {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fdfcfa;
+  margin-bottom: 4px;
 }
 
-.dot {
-  position: absolute;
-  width: 11px;
-  height: 11px;
-  background: #1e3a5e;
-  border: 2px solid #fdfcfa;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  cursor: help;
-  box-shadow: 0 0 0 1px rgba(30, 58, 94, 0.25);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+.world-map .leaflet-tooltip-top::before { border-top-color: #1a1a1a; }
+.world-map .leaflet-tooltip-bottom::before { border-bottom-color: #1a1a1a; }
+.world-map .leaflet-tooltip-left::before { border-left-color: #1a1a1a; }
+.world-map .leaflet-tooltip-right::before { border-right-color: #1a1a1a; }
+
+.world-map .leaflet-interactive {
+  transition: transform 0.15s ease;
+  transform-origin: center;
 }
 
-.dot:hover {
-  transform: translate(-50%, -50%) scale(1.45);
-  box-shadow: 0 0 0 6px rgba(30, 58, 94, 0.15);
-}
-
-/* Soft pulsing ring around each dot */
-.dot::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border: 1px solid #1e3a5e;
-  border-radius: 50%;
-  opacity: 0;
-  animation: dot-pulse 3.4s ease-out infinite;
-  pointer-events: none;
-}
-
-@keyframes dot-pulse {
-  0%   { opacity: 0.35; transform: scale(0.6); }
-  100% { opacity: 0;    transform: scale(2.8); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dot::after { animation: none; }
+.world-map .leaflet-interactive:hover {
+  filter: drop-shadow(0 0 6px rgba(30, 58, 94, 0.45));
 }
