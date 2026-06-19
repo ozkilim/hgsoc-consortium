@@ -34,7 +34,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
   font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -127,6 +127,11 @@ a { color: inherit; }
 /* ---------- Nav ----------------------------------------------------------- */
 
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,6 +146,16 @@ a { color: inherit; }
   letter-spacing: 0.04em;
   color: var(--dark);
   text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+/* Nav adapts to the dynamic background: on the dark (navy) zone the wordmark
+   flips to white so it stays legible. The white pill + white-bg CTA already
+   stand out on every zone colour. */
+.site-nav.on-dark .brand { color: var(--white); }
+.site-nav.on-dark .nav-pill {
+  background: rgba(255,255,255,0.97);
+  border-color: rgba(255,255,255,0.4);
 }
 
 .nav-pill {
@@ -360,6 +375,8 @@ a { color: inherit; }
   color: var(--body);
 }
 .world-map {
+  position: relative;
+  z-index: 0;            /* contain Leaflet's stacking so it stays under the nav */
   width: 100%;
   height: 520px;
   border-radius: var(--r-lg);
@@ -691,6 +708,7 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   #bg-layer { transition: none; }
+  .brand { transition: none; }
   .hero-box, .grad-panel { animation: none; }
   .hero-grain { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -736,7 +754,7 @@ a { color: inherit; }
 /* Zones are transparent — the #bg-layer colour shows through. The class is
    kept only so per-theme contrast rules below can target their children. */
 .zone        { position: relative; padding-bottom: 90px; background: transparent; }
-.top-zone    { background: transparent; }
+.top-zone    { background: transparent; padding-top: 92px; }
 
 /* Dark-blue zone: lift eyebrow + recolour the dark button so it reads. */
 .zone-dark .eyebrow      { color: var(--light-lav); }
@@ -797,6 +815,7 @@ a { color: inherit; }
 
 @media (max-width: 560px) {
   .site-nav { padding: 16px 20px; }
+  .top-zone { padding-top: 72px; }
   .nav-cta { padding: 11px 18px; font-size: 14px; }
   .hero-inner h1 { font-size: clamp(40px, 12vw, 52px); }
   .stat-num, .stat-suffix { font-size: 52px; }

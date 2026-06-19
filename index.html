@@ -441,6 +441,7 @@
       var COLORS = { light: '#f4f1fd', purple: '#a99cf2', dark: '#232a4d' };
       var zones = Array.prototype.slice.call(document.querySelectorAll('[data-bg]'));
       if (!zones.length) return;
+      var nav = document.querySelector('.site-nav');
       var ticking = false;
       function apply() {
         ticking = false;
@@ -449,8 +450,12 @@
         for (var i = 0; i < zones.length; i++) {
           if (zones[i].offsetTop <= line) active = zones[i];
         }
-        var c = COLORS[active.getAttribute('data-bg')];
+        var theme = active.getAttribute('data-bg');
+        var c = COLORS[theme];
         if (c) layer.style.backgroundColor = c;
+        // The whole viewport background is one uniform colour, so the nav can
+        // adapt to the same active theme to stay legible.
+        if (nav) nav.classList.toggle('on-dark', theme === 'dark');
       }
       function onScroll() {
         if (!ticking) { ticking = true; requestAnimationFrame(apply); }
