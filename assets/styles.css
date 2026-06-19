@@ -154,8 +154,16 @@ a { color: inherit; }
    stand out on every zone colour. */
 .site-nav.on-dark .brand { color: var(--white); }
 .site-nav.on-dark .nav-pill {
-  background: rgba(255,255,255,0.97);
-  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: none;
+}
+.site-nav.on-dark .nav-pill a { color: var(--white); }
+.site-nav.on-dark .nav-pill a:hover { background: rgba(255,255,255,0.14); }
+.site-nav.on-dark .nav-cta {
+  background: transparent;
+  border-color: rgba(255,255,255,0.55);
+  color: var(--white);
 }
 
 .nav-pill {
@@ -167,6 +175,7 @@ a { color: inherit; }
   border-radius: var(--r-pill);
   padding: 7px 12px;
   box-shadow: var(--shadow-nav);
+  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 .nav-pill a {
   padding: 10px 16px;
@@ -175,7 +184,7 @@ a { color: inherit; }
   font-weight: 600;
   color: var(--dark);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, color 0.5s ease;
 }
 .nav-pill a:hover { background: var(--offwhite); }
 
@@ -183,6 +192,8 @@ a { color: inherit; }
   flex: none;
   font-size: 15px;
   padding: 13px 26px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
 }
 
 /* ---------- Hero ---------------------------------------------------------- */
