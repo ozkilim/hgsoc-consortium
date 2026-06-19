@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'PhantomTrace';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/PhantomTrace-Regular.ttf') format('truetype');
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   background: #AB9FF2;
   color: #1a1a1a;
   line-height: 1.6;
@@ -81,7 +89,7 @@ main {
 }
 
 .signup-hook {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 4vw, 38px);
   line-height: 1.15;
@@ -106,7 +114,7 @@ main {
 
 .signup-form input[type="email"] {
   flex: 1;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   padding: 14px 16px;
   border: 1px solid #d4d0c8;
@@ -122,7 +130,7 @@ main {
 }
 
 .signup-form button {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 500;
   padding: 14px 22px;
@@ -139,7 +147,7 @@ main {
 
 .signup-thanks {
   display: none;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-style: italic;
   font-size: 19px;
   color: #1e3a5e;
@@ -193,7 +201,7 @@ main {
 }
 
 h1 {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: clamp(36px, 5.5vw, 64px);
   line-height: 1.05;
@@ -278,7 +286,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 .bar-value {
   position: absolute;
   right: 12px;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   color: #1a1a1a;
 }
@@ -336,7 +344,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 .partner:hover { background: #f7f3ea; }
 
 .partner-name {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 16px;
   color: #1a1a1a;
   line-height: 1.25;
@@ -362,7 +370,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 
 /* Text fallback shown when a logo file isn't present yet */
 .partner-fallback {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 16px;
   color: #1a1a1a;
   line-height: 1.25;
@@ -378,7 +386,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .brand-name {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: 22px;
   letter-spacing: 0.14em;
@@ -386,7 +394,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .brand-meaning {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-style: italic;
   font-size: 13px;
   color: #8a8578;
@@ -415,7 +423,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .stat-value {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 400;
   font-size: 38px;
   line-height: 1;
@@ -523,7 +531,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .milestone-year {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 28px;
   line-height: 1;
   color: #1a1a1a;
@@ -543,7 +551,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .milestone-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 16px;
   color: #1a1a1a;
   margin-bottom: 8px;
@@ -592,7 +600,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .why-hook {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: clamp(22px, 3vw, 28px);
   line-height: 1.22;
@@ -615,7 +623,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   margin-top: 16px;
   padding: 28px 0 4px;
   border-top: 1px solid #ebe7df;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 20px;
   font-style: italic;
   color: #1e3a5e;
@@ -632,7 +640,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   padding: 16px 32px;
   background: #ffffff;
   color: #1e3a5e;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 999px;
@@ -708,7 +716,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   justify-content: center;
 }
 
-/* Sticky top nav with PLATINA wordmark and a quick CTA */
+/* White top bar: PLATINA wordmark + menu links + Get-more-info CTA */
 .site-nav {
   position: fixed;
   top: 0;
@@ -718,32 +726,51 @@ p a:hover { text-decoration-color: #1a1a1a; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 32px;
-  background: rgba(171, 159, 242, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(60, 49, 91, 0.12);
+  gap: 24px;
+  padding: 14px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(30, 58, 94, 0.08);
+  box-shadow: 0 2px 16px rgba(30, 58, 94, 0.06);
 }
 
 .site-nav .brand-name {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.16em;
-  color: #1a1a1a;
+  color: #1e3a5e;
   text-decoration: none;
 }
+
+.nav-menu {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-menu a {
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e3a5e;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.nav-menu a:hover { opacity: 0.65; }
 
 .nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 9px 20px;
+  padding: 10px 22px;
   background: #1e3a5e;
-  color: #fdfcfa;
-  font-family: 'Inter', -apple-system, sans-serif;
+  color: #ffffff;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -754,8 +781,12 @@ p a:hover { text-decoration-color: #1a1a1a; }
   transform: translateY(-1px);
 }
 
+@media (max-width: 760px) {
+  .nav-menu { display: none; }
+}
+
 @media (max-width: 600px) {
-  .site-nav { padding: 14px 20px; }
+  .site-nav { padding: 12px 20px; }
   .nav-cta { padding: 8px 16px; font-size: 12.5px; }
   .fold { padding: 96px 24px; }
 }
@@ -775,7 +806,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .sponsor {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   color: #6b7280;
   letter-spacing: 0.01em;
@@ -811,7 +842,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 28px;
   color: #8a8578;
   overflow: hidden;
@@ -825,7 +856,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .member-name {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 17px;
   color: #1a1a1a;
   margin-bottom: 4px;
@@ -871,14 +902,14 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .way-num {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 13px;
   color: #8a8578;
   margin-bottom: 12px;
 }
 
 .way-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 19px;
   line-height: 1.25;
   margin-bottom: 10px;
@@ -910,7 +941,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 }
 
 .contact a {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 22px;
   color: #1a1a1a;
   text-decoration: none;
@@ -966,14 +997,14 @@ footer {
 }
 
 .pub-meta {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 13px;
   color: #8a8578;
   white-space: nowrap;
 }
 
 .pub-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 16px;
   color: #1a1a1a;
   line-height: 1.35;
@@ -1015,7 +1046,7 @@ footer {
 }
 
 .gov-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 17px;
   color: #1a1a1a;
   margin-bottom: 10px;
@@ -1040,7 +1071,7 @@ footer {
 }
 
 .map-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: clamp(22px, 3vw, 28px);
   line-height: 1.22;
@@ -1070,7 +1101,7 @@ footer {
 /* Leaflet overrides: match the editorial palette */
 .world-map .leaflet-container {
   background: #faf7f1;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   outline: none;
 }
 
@@ -1103,7 +1134,7 @@ footer {
   padding: 10px 12px;
   font-size: 12.5px;
   line-height: 1.45;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
   white-space: normal;
   max-width: 260px;
@@ -1111,7 +1142,7 @@ footer {
 
 .world-map .leaflet-tooltip strong {
   display: block;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-weight: 500;
   font-size: 14px;
   color: #fdfcfa;
