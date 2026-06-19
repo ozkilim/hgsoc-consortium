@@ -195,21 +195,22 @@ main {
 h1 {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 500;
-  font-size: clamp(52px, 9vw, 110px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin-bottom: 36px;
+  font-size: clamp(36px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+  color: #1e3a5e;
 }
 
 h1 em {
   font-style: italic;
-  color: #1e3a5e;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .lede {
   font-size: 19px;
-  color: #1a1a1a;
+  color: #1e3a5e;
   line-height: 1.55;
   margin-bottom: 20px;
   max-width: 600px;
@@ -306,7 +307,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8a8578;
+  color: rgba(30, 58, 94, 0.65);
   margin-bottom: 24px;
 }
 
@@ -628,22 +629,22 @@ p a:hover { text-decoration-color: #1a1a1a; }
   align-items: center;
   gap: 8px;
   margin-top: 36px;
-  padding: 18px 36px;
-  background: #1e3a5e;
-  color: #fdfcfa;
+  padding: 16px 32px;
+  background: #ffffff;
+  color: #1e3a5e;
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 999px;
   border: none;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(30, 58, 94, 0.12);
+  box-shadow: 0 4px 14px rgba(30, 58, 94, 0.18);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .section-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30, 58, 94, 0.22);
+  box-shadow: 0 10px 28px rgba(30, 58, 94, 0.28);
 }
 
 .cta-center { text-align: center; }
@@ -660,12 +661,20 @@ p a:hover { text-decoration-color: #1a1a1a; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 112px 32px;
+  padding: 96px 32px;
   margin-top: 0;
   margin-bottom: 0;
   border-top: none;
   box-sizing: border-box;
+}
+
+.fold .hero-content,
+.fold .lede,
+.fold p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fold .partners-label {
