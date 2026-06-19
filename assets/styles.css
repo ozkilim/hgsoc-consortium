@@ -195,9 +195,9 @@ main {
 h1 {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 500;
-  font-size: clamp(40px, 6.6vw, 62px);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
+  font-size: clamp(52px, 9vw, 110px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
   margin-bottom: 36px;
 }
 
@@ -622,23 +622,134 @@ p a:hover { text-decoration-color: #1a1a1a; }
   letter-spacing: -0.005em;
 }
 
-/* Per-section call-to-action linking down to the email form */
+/* Pill-style CTA — Phantom-inspired primary action button */
 .section-cta {
-  display: inline-block;
-  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  padding: 18px 36px;
+  background: #1e3a5e;
+  color: #fdfcfa;
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #1e3a5e;
+  border-radius: 999px;
+  border: none;
   text-decoration: none;
-  border-bottom: 1px solid #c2cedd;
-  padding-bottom: 3px;
-  transition: border-color 0.15s ease;
+  box-shadow: 0 4px 14px rgba(30, 58, 94, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.section-cta:hover { border-color: #1e3a5e; }
+.section-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 58, 94, 0.22);
+}
 
 .cta-center { text-align: center; }
+
+/* Phantom-style fold: every major section is one viewport tall, content
+   centered both axes. Padding is the section's full breathing room since
+   margins/borders from per-section rules are reset here. */
+.fold {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 112px 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.fold .partners-label {
+  margin-bottom: 24px;
+}
+
+.fold .partners-grid,
+.fold .stats-grid,
+.fold .gov-grid,
+.fold .team-grid,
+.fold .ways-grid,
+.fold .world-map,
+.fold .pubs-list,
+.fold .why-closer,
+.fold .cta-center,
+.fold .sponsors-row {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fold .lede,
+.fold .map-sub,
+.fold .map-title,
+.fold .evidence-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fold .sponsors-row {
+  justify-content: center;
+}
+
+/* Sticky top nav with PLATINA wordmark and a quick CTA */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  background: rgba(253, 252, 250, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(235, 231, 223, 0.6);
+}
+
+.site-nav .brand-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: #1e3a5e;
+  color: #fdfcfa;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.nav-cta:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .site-nav { padding: 14px 20px; }
+  .nav-cta { padding: 8px 16px; font-size: 12.5px; }
+  .fold { padding: 96px 24px; }
+}
 
 .sponsors {
   margin-top: 64px;
