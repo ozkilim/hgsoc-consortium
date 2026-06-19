@@ -4,224 +4,259 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PLATINA · Predict Platinum Response in HGSOC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-  <header class="site-nav">
-    <a class="brand-name" href="#top">PLATINA</a>
-    <nav class="nav-menu">
-      <a href="cohort.html">What's a cohort?</a>
-      <a href="#worldmap">Worldwide effort</a>
-      <a href="#faq">FAQs</a>
-      <a href="#team">Team</a>
-      <a href="#evidence">Evidence</a>
-    </nav>
-    <a class="nav-cta" href="#join">Get more info →</a>
-  </header>
+<body id="top">
 
-  <main id="top">
-    <section class="hero-full fold">
-      <div class="hero-content">
-        <h1>A consortium to predict <em>platinum response</em> in high-grade serous ovarian cancer.</h1>
-        <p class="lede">
-          A multimodal foundation model built by leading cancer centers, trained on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients.
-        </p>
-        <a class="section-cta" href="#join">Join the consortium →</a>
+  <!-- ===== OFF-WHITE TOP ZONE: nav + hero ===== -->
+  <div class="top-zone">
+
+    <!-- NAV -->
+    <header class="site-nav">
+      <a class="brand" href="#top">PLATINA</a>
+      <nav class="nav-pill">
+        <a href="cohort.html">What's a cohort?</a>
+        <a href="#worldwide">Worldwide effort</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#team">Team</a>
+        <a href="#evidence">Evidence</a>
+      </nav>
+      <a class="btn btn--outline-dark nav-cta" href="#join">Get more info →</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-box">
+        <div class="hero-grain"></div>
+        <div class="hero-inner">
+          <h1>No more<br><span class="accent">Unnecessary</span> chemo.</h1>
+          <p class="hero-sub">A consortium to predict platinum response in high-grade serous ovarian cancer.</p>
+          <a class="btn btn--hero" href="#join">Join the consortium →</a>
+        </div>
       </div>
     </section>
 
-    <div class="why reveal fold">
-      <div class="partners-label">The problem</div>
-      <div class="stats-grid why-metrics">
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="207000">0</span></div>
-          <div class="stat-label">women die of ovarian cancer every year, worldwide</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="80">0</span><span class="stat-target">%</span></div>
-          <div class="stat-label">of HGSOC patients relapse after platinum</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="12">0</span><span class="stat-target"> months</span></div>
-          <div class="stat-label">median survival once platinum resistance sets in</div>
-        </div>
+  </div>
+
+  <!-- TRANSITION white -> lavender -->
+  <div class="transition"></div>
+
+  <!-- WHAT WE'RE BUILDING -->
+  <section class="wrap sec center reveal" id="what" style="padding-top:160px;">
+    <p class="eyebrow">What we're building</p>
+    <h2 class="h2">A multimodal foundation model.</h2>
+    <p class="intro-copy">Built by leading cancer centers, trained on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients.</p>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="wrap wrap-wide sec reveal" style="padding-top:140px;">
+    <p class="eyebrow center">The problem</p>
+    <div class="grid-3">
+      <div class="stat-card">
+        <div class="stat-num"><span class="num" data-count="207000">0</span></div>
+        <p class="stat-label">women die of ovarian cancer every year, worldwide</p>
       </div>
-      <div class="why-closer">
-        We reach 10,000 together. Or we don't.
+      <div class="stat-card">
+        <div class="stat-num"><span class="num" data-count="80">0</span><span class="stat-suffix">%</span></div>
+        <p class="stat-label">of HGSOC patients relapse after platinum</p>
       </div>
-      <div class="cta-center">
-        <a class="section-cta" href="#join">Add your cohort →</a>
-        <a class="section-cta" href="cohort.html" style="margin-left: 24px;">What counts as a cohort? →</a>
+      <div class="stat-card">
+        <div class="stat-num"><span class="num" data-count="12">0</span><span class="stat-suffix"> months</span></div>
+        <p class="stat-label">median survival once platinum resistance sets in</p>
       </div>
     </div>
+  </section>
 
-    <div class="partners reveal fold">
-      <div class="partners-label">Founding institutions</div>
-      <div class="partners-grid">
-        <div class="partner" title="Dana-Farber Cancer Institute">
-          <img class="partner-logo" src="assets/logos/dana-farber.svg" alt="Dana-Farber Cancer Institute" data-name="Dana-Farber Cancer Institute">
-        </div>
-        <div class="partner" title="Brigham &amp; Women's Hospital">
-          <img class="partner-logo" src="assets/logos/brigham.svg" alt="Brigham &amp; Women's Hospital" data-name="Brigham &amp; Women's Hospital">
-        </div>
-        <div class="partner" title="Boston Children's Hospital">
-          <img class="partner-logo" src="assets/logos/boston-childrens.svg" alt="Boston Children's Hospital" data-name="Boston Children's Hospital">
-        </div>
-        <div class="partner" title="Massachusetts General Hospital">
-          <img class="partner-logo" src="assets/logos/mass-general.svg" alt="Massachusetts General Hospital" data-name="Mass General Hospital">
-        </div>
-        <div class="partner" title="Harvard Medical School">
-          <img class="partner-logo" src="assets/logos/harvard-ms.svg" alt="Harvard Medical School" data-name="Harvard Medical School">
-        </div>
-        <div class="partner" title="Peter MacCallum Cancer Centre">
-          <img class="partner-logo" src="assets/logos/peter-mac.png" alt="Peter MacCallum Cancer Centre" data-name="Peter MacCallum">
-        </div>
-        <div class="partner" title="Semmelweis University">
-          <img class="partner-logo" src="assets/logos/semmelweis.svg" alt="Semmelweis University" data-name="Semmelweis University">
-        </div>
-        <div class="partner" title="OHSU Knight Cancer Institute">
-          <img class="partner-logo" src="assets/logos/ohsu-knight.png" alt="OHSU Knight Cancer Institute" data-name="Knight Cancer Institute">
-        </div>
-        <div class="partner" title="Yonsei University College of Medicine, Seoul">
-          <img class="partner-logo" src="assets/logos/yonsei.svg" alt="Yonsei University College of Medicine" data-name="Yonsei University">
-        </div>
-        <div class="partner" title="Severance Hospital, Seoul">
-          <img class="partner-logo" src="assets/logos/severance.svg" alt="Severance Hospital" data-name="Severance Hospital">
-        </div>
-        <div class="partner" title="Oslo University Hospital">
-          <img class="partner-logo" src="assets/logos/oslo-uh.svg" alt="Oslo University Hospital" data-name="Oslo University Hospital">
-        </div>
-        <div class="partner" title="Hungarian National Institute of Oncology (OOI)">
-          <img class="partner-logo" src="assets/logos/ooi.svg" alt="Hungarian National Institute of Oncology" data-name="Hungarian Oncology Institute">
-        </div>
+  <!-- RALLY BAND -->
+  <section class="wrap wrap-wide sec-tight reveal">
+    <div class="rally">
+      <h2>We reach 10,000 together.<br>Or we don't.</h2>
+      <div class="btn-row">
+        <a class="btn btn--lav" href="cohort.html">Add your cohort →</a>
+        <a class="btn btn--outline-light" href="cohort.html">What counts as a cohort? →</a>
       </div>
-      <a class="section-cta" href="#join">Add your institution →</a>
     </div>
+  </section>
 
-    <div class="worldmap reveal fold" id="worldmap">
-      <div class="partners-label">Worldwide effort</div>
-      <h2 class="map-title">From Boston to Seoul to Melbourne.</h2>
+  <!-- FOUNDING INSTITUTIONS -->
+  <section class="wrap wrap-wide sec reveal" id="cohort">
+    <p class="eyebrow center">Founding institutions</p>
+    <div class="chip-grid">
+      <div class="chip"><span class="dot"></span><span class="name">Dana-Farber Cancer Institute</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Brigham &amp; Women's Hospital</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Boston Children's Hospital</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Massachusetts General Hospital</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Harvard Medical School</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Peter MacCallum Cancer Centre</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Semmelweis University</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">OHSU Knight Cancer Institute</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Yonsei University College of Medicine</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Severance Hospital</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Oslo University Hospital</span></div>
+      <div class="chip"><span class="dot"></span><span class="name">Hungarian Oncology Institute</span></div>
+    </div>
+    <div class="cta-after">
+      <a class="btn btn--dark2" href="#join">Add your institution →</a>
+    </div>
+  </section>
+
+  <!-- WORLDWIDE EFFORT -->
+  <section class="wrap wrap-wide sec reveal" id="worldwide">
+    <div class="map-head">
+      <p class="eyebrow">Worldwide effort</p>
+      <h2 class="h2 h2-56">From Boston to Seoul to Melbourne.</h2>
       <p class="map-sub">Twelve founding institutions across four continents, tied together by one shared cohort.</p>
-      <div id="world-map" class="world-map" aria-label="Map of founding institution cities"></div>
     </div>
+    <div id="world-map" class="world-map" aria-label="Map of founding institution cities"></div>
+  </section>
 
-    <div class="evidence reveal fold" id="evidence">
-      <div class="partners-label">Evidence</div>
-      <div class="pubs-list">
-        <a class="pub" href="https://www.nature.com/articles/s41698-025-00808-w" target="_blank" rel="noopener">
-          <div class="pub-meta">npj Precision Oncology · 2025</div>
-          <div class="pub-title">doi.org/10.1038/s41698-025-00808-w</div>
-          <div class="pub-link">Read paper →</div>
-        </a>
+  <!-- EVIDENCE -->
+  <section class="wrap wrap-wide sec reveal" id="evidence">
+    <p class="eyebrow center">Evidence</p>
+    <div class="evidence-card">
+      <div>
+        <div class="evidence-title">npj Precision Oncology · 2025</div>
+        <div class="evidence-doi">doi.org/10.1038/s41698-025-00808-w</div>
       </div>
-      <a class="section-cta" href="#join">Partner with us →</a>
-    </div>
-
-    <div class="stats reveal fold">
-      <div class="partners-label">Toward 10,000</div>
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="1240">0</span><span class="stat-target">/ 10,000</span></div>
-          <div class="stat-label">HGSOC patients enrolled</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="--pct: 12.4%;"></div></div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="3800">0</span><span class="stat-target">/ 30,000</span></div>
-          <div class="stat-label">H&amp;E whole-slide images</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="--pct: 12.7%;"></div></div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span class="num" data-count="680">0</span><span class="stat-target">/ 6,000</span></div>
-          <div class="stat-label">multimodal cases</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="--pct: 11.3%;"></div></div>
-        </div>
-      </div>
-      <a class="section-cta" href="#join">Help us reach 10,000 →</a>
-    </div>
-
-    <div class="governance reveal fold">
-      <div class="partners-label">How we work</div>
-      <div class="gov-grid">
-        <div class="gov">
-          <div class="gov-title">Co-authorship by default</div>
-          <div class="gov-body">Every contributing institution receives co-authorship on flagship papers. Cohort PIs sit on the publications committee.</div>
-        </div>
-        <div class="gov">
-          <div class="gov-title">Data stays with you</div>
-          <div class="gov-body">Federated-first. We ship the training and evaluation container; slides and clinical data never leave your firewall unless you opt in.</div>
-        </div>
-        <div class="gov">
-          <div class="gov-title">IRB &amp; DTA ready</div>
-          <div class="gov-body">Template DTA, IRB protocol language, and a HIPAA-compliant pipeline on day one. The legal groundwork is done.</div>
-        </div>
-      </div>
-      <a class="section-cta" href="#join">Start the conversation →</a>
-    </div>
-
-<div class="ways reveal fold">
-      <div class="partners-label">Ways to participate</div>
-      <div class="ways-grid">
-        <a class="way" href="#join">
-          <div class="way-num">01</div>
-          <div class="way-title">Join the consortium</div>
-          <div class="way-desc">Become a founding partner. Co-develop the foundation model. Co-author the science.</div>
-          <div class="way-link">Become a partner →</div>
-        </a>
-
-        <a class="way" href="cohort.html">
-          <div class="way-num">02</div>
-          <div class="way-title">Add your cohort</div>
-          <div class="way-desc">Bring your HGSOC patients into the 10,000. More data in, stronger model out. Shared credit, shared model.</div>
-          <div class="way-link">See what counts as a cohort →</div>
-        </a>
-
-        <a class="way" href="#join">
-          <div class="way-num">03</div>
-          <div class="way-title">Validate locally</div>
-          <div class="way-desc">Run the model on your cohort. No data leaves your site. We ship the container, you return the metrics.</div>
-          <div class="way-link">Run validation →</div>
-        </a>
+      <div class="evidence-actions">
+        <a class="btn btn--dark" href="https://www.nature.com/articles/s41698-025-00808-w" target="_blank" rel="noopener">Read paper →</a>
+        <a class="btn btn--ghost-dark" href="#join">Partner with us →</a>
       </div>
     </div>
+  </section>
 
-    <div class="team reveal fold" id="team">
-      <div class="partners-label">Team</div>
-      <div class="team-grid">
-        <div class="member">
-          <div class="member-name">Zoltan Szallasi, MD</div>
-          <div class="member-role">PI</div>
+  <!-- TOWARD 10,000 -->
+  <section class="wrap sec reveal">
+    <p class="eyebrow center">Toward 10,000</p>
+    <div class="progress-stack">
+      <div>
+        <div class="progress-head">
+          <span class="progress-label">HGSOC patients enrolled</span>
+          <span class="progress-val">1,240 / 10,000</span>
         </div>
-        <div class="member">
-          <div class="member-name">Oz Kilim, PhD</div>
-          <div class="member-role">ML &amp; Multimodal Modeling</div>
+        <div class="progress-track"><div class="progress-fill" style="--pct:12.4%;"></div></div>
+      </div>
+      <div>
+        <div class="progress-head">
+          <span class="progress-label">H&amp;E whole-slide images</span>
+          <span class="progress-val">3,800 / 30,000</span>
         </div>
-        <div class="member">
-          <div class="member-name">Zsofia Sztupinszki, MD, PhD</div>
-          <div class="member-role">Clinical Oncology</div>
+        <div class="progress-track"><div class="progress-fill" style="--pct:12.7%;"></div></div>
+      </div>
+      <div>
+        <div class="progress-head">
+          <span class="progress-label">multimodal cases</span>
+          <span class="progress-val">680 / 6,000</span>
         </div>
+        <div class="progress-track"><div class="progress-fill" style="--pct:11.3%;"></div></div>
       </div>
     </div>
+    <div class="cta-after" style="margin-top:48px;">
+      <a class="btn btn--dark" href="#join">Help us reach 10,000 →</a>
+    </div>
+  </section>
 
-    <div class="sponsors reveal fold">
-      <div class="partners-label">Supported by</div>
-      <div class="sponsors-row">
-        <div class="sponsor">Ovarian Cancer Research Alliance</div>
+  <!-- HOW WE WORK -->
+  <section class="wrap wrap-wide sec reveal">
+    <p class="eyebrow center">How we work</p>
+    <div class="grid-3">
+      <div class="work-card">
+        <div class="icon-tile"><span class="inner"></span></div>
+        <h3>Co-authorship by default</h3>
+        <p>Every contributing institution receives co-authorship on flagship papers. Cohort PIs sit on the publications committee.</p>
+      </div>
+      <div class="work-card">
+        <div class="icon-tile"><span class="inner"></span></div>
+        <h3>Data stays with you</h3>
+        <p>Federated-first. We ship the training and evaluation container; slides and clinical data never leave your firewall unless you opt in.</p>
+      </div>
+      <div class="work-card">
+        <div class="icon-tile"><span class="inner"></span></div>
+        <h3>IRB &amp; DTA ready</h3>
+        <p>Template DTA, IRB protocol language, and a HIPAA-compliant pipeline on day one. The legal groundwork is done.</p>
       </div>
     </div>
+    <div class="cta-after">
+      <a class="btn btn--dark2" href="#join">Start the conversation →</a>
+    </div>
+  </section>
 
-    <section class="signup-full reveal fold" id="join">
+  <!-- WAYS TO PARTICIPATE -->
+  <section class="wrap wrap-wide sec reveal">
+    <p class="eyebrow center">Ways to participate</p>
+    <div class="ways-stack">
+      <div class="way-row">
+        <div class="way-num">01</div>
+        <div class="way-body">
+          <h3>Join the consortium</h3>
+          <p>Become a founding partner. Co-develop the foundation model. Co-author the science.</p>
+        </div>
+        <a class="btn btn--dark" href="#join">Become a partner →</a>
+      </div>
+      <div class="way-row">
+        <div class="way-num">02</div>
+        <div class="way-body">
+          <h3>Add your cohort</h3>
+          <p>Bring your HGSOC patients into the 10,000. More data in, stronger model out. Shared credit, shared model.</p>
+        </div>
+        <a class="btn btn--dark" href="cohort.html">See what counts as a cohort →</a>
+      </div>
+      <div class="way-row">
+        <div class="way-num">03</div>
+        <div class="way-body">
+          <h3>Validate locally</h3>
+          <p>Run the model on your cohort. No data leaves your site. We ship the container, you return the metrics.</p>
+        </div>
+        <a class="btn btn--dark" href="#join">Run validation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="wrap wrap-wide sec reveal" id="team">
+    <p class="eyebrow center">Team</p>
+    <div class="grid-3">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Zoltan Szallasi, MD</h3>
+        <p class="role">PI</p>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Oz Kilim, PhD</h3>
+        <p class="role">ML &amp; Multimodal Modeling</p>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Zsofia Sztupinszki, MD, PhD</h3>
+        <p class="role">Clinical Oncology</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTED BY -->
+  <section class="wrap sec center reveal">
+    <p class="eyebrow">Supported by</p>
+    <div class="supported">Ovarian Cancer Research Alliance</div>
+  </section>
+
+  <!-- EMAIL SIGNUP (kept from production, restyled) -->
+  <section class="signup reveal" id="join">
+    <div class="signup-box">
       <video class="signup-video" autoplay muted loop playsinline preload="auto" poster="assets/wsi-poster.jpg">
         <source src="assets/wsi-zoom.mp4" type="video/mp4">
       </video>
       <div class="signup-fade"></div>
       <div class="signup-content">
-        <div class="partners-label">Join the consortium</div>
+        <p class="eyebrow">Join the consortium</p>
         <h2 class="signup-hook">Bring your cohort into the 10,000.</h2>
         <p class="signup-sub">Leave your email and we'll be in touch about becoming a partner, contributing a cohort, or running federated validation at your site.</p>
 
         <!-- EMAIL COLLECTION: wired to the consortium Google Form.
-             Submissions land in that form's responses / linked Google Sheet.
              Form: docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ
              Email field: entry.1953270115 -->
         <form class="signup-form"
@@ -234,12 +269,25 @@
         <div class="signup-thanks">Thanks, we'll be in touch shortly.</div>
         <iframe name="gform-sink" title="form sink" style="display:none"></iframe>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>PLATINA · Boston, MA</footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="#top">PLATINA</a>
+      <nav class="footer-links">
+        <a href="#faqs">FAQs</a>
+        <a href="#team">Team</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#join">Contact</a>
+      </nav>
+      <span class="footer-copy">© 2026 PLATINA Consortium</span>
+    </div>
+  </footer>
 
   <script>
+    // Scroll-reveal + count-up animation for stat numbers.
     (function() {
       var fmt = new Intl.NumberFormat('en-US');
 
@@ -288,8 +336,7 @@
 
   <script>
     // Email signup: posts into the hidden iframe so the page never navigates,
-    // then optimistically swaps the form for a thank-you (the cross-origin
-    // Google Forms response isn't readable, so we can't verify server-side).
+    // then optimistically swaps the form for a thank-you.
     (function() {
       var form = document.querySelector('.signup-form');
       if (!form) return;
@@ -301,9 +348,9 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
-    // Worldwide-effort map: Leaflet with CartoDB Positron tiles, one dot per
-    // founding-institution city. Boston gets a single dot (5 institutions live
-    // there); the dot's tooltip lists them all.
+    // Worldwide-effort map: Leaflet with CARTO light tiles, one circle marker
+    // per founding-institution city, each with a popup. Boston is a single
+    // marker representing its 5 institutions.
     (function() {
       var el = document.getElementById('world-map');
       if (!el || typeof L === 'undefined') return;
@@ -316,58 +363,35 @@
         worldCopyJump: true
       });
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
       }).addTo(map);
 
       var cities = [
-        [42.3601,  -71.0589, 'Boston',    "Dana-Farber, Brigham &amp; Women's, Boston Children's, Mass General, Harvard Medical School"],
-        [45.5152, -122.6784, 'Portland',  'OHSU Knight Cancer Institute'],
-        [59.9139,   10.7522, 'Oslo',      'Oslo University Hospital'],
-        [47.4979,   19.0402, 'Budapest',  'Semmelweis University, Hungarian National Institute of Oncology'],
-        [37.5665,  126.9780, 'Seoul',     'Yonsei University College of Medicine, Severance Hospital'],
-        [-37.8136, 144.9631, 'Melbourne', 'Peter MacCallum Cancer Centre']
+        [42.34,   -71.10, 'Boston, USA (5 institutions)'],
+        [45.50,  -122.68, 'Portland, USA — OHSU Knight'],
+        [59.91,    10.75, 'Oslo, Norway — Oslo University Hospital'],
+        [47.49,    19.04, 'Budapest, Hungary — Semmelweis & Hungarian Oncology Institute'],
+        [37.56,   126.94, 'Seoul, South Korea — Yonsei & Severance'],
+        [-37.81,  144.96, 'Melbourne, Australia — Peter MacCallum']
       ];
 
       cities.forEach(function(c) {
-        var marker = L.circleMarker([c[0], c[1]], {
+        L.circleMarker([c[0], c[1]], {
           radius: 8,
-          fillColor: '#1e3a5e',
-          color: '#fdfcfa',
+          color: '#3a2d52',
           weight: 2.5,
-          opacity: 1,
+          fillColor: '#a99cf2',
           fillOpacity: 1
-        }).addTo(map);
-        marker.bindTooltip(
-          '<strong>' + c[2] + '</strong>' + c[3],
-          { direction: 'top', offset: [0, -10], opacity: 1, sticky: false }
-        );
+        }).addTo(map).bindPopup(c[2]);
       });
 
       map.fitBounds(
         L.latLngBounds(cities.map(function(c) { return [c[0], c[1]]; })),
-        { padding: [40, 40], maxZoom: 3 }
+        { padding: [60, 60], maxZoom: 4 }
       );
-    })();
-  </script>
-
-  <script>
-    // Partner logos: if a logo file isn't present yet (slots still to be
-    // supplied), fall back to the institution name as styled text so the
-    // grid never shows a broken image.
-    (function() {
-      document.querySelectorAll('.partner-logo').forEach(function(img) {
-        function fallback() {
-          var span = document.createElement('span');
-          span.className = 'partner-fallback';
-          span.textContent = img.getAttribute('data-name') || img.alt;
-          img.replaceWith(span);
-        }
-        img.addEventListener('error', fallback);
-        if (img.complete && img.naturalWidth === 0) fallback();
-      });
     })();
   </script>
 </body>
