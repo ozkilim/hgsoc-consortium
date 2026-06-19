@@ -199,6 +199,17 @@ a { color: inherit; }
   animation: grain 0.5s steps(2) infinite;
 }
 
+/* Reusable animated gradient panel (same look as the hero box). Pair with a
+   .hero-grain overlay child and a position:relative content wrapper. */
+.grad-panel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg,#c7bcfb 0%,#897ae7 32%,#a99cf2 60%,#c0b2fb 100%);
+  background-size: 300% 300%;
+  animation: gradShift 16s ease infinite;
+  box-shadow: 0 22px 60px rgba(58,45,82,0.20);
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -278,12 +289,12 @@ a { color: inherit; }
 /* ---------- Rally band ---------------------------------------------------- */
 
 .rally {
-  background: var(--dark);
   border-radius: var(--r-band);
-  padding: 84px 40px;
+  padding: 92px 40px;
   text-align: center;
-  color: var(--white);
+  color: var(--dark);
 }
+.rally-inner { position: relative; z-index: 1; }
 .rally h2 {
   margin: 0;
   font-size: 56px;
@@ -563,78 +574,59 @@ a { color: inherit; }
   margin: 0 auto;
   border-radius: var(--r-band);
   overflow: hidden;
-  isolation: isolate;
-  padding: 96px 40px 104px;
+  padding: 120px 40px 130px;
   text-align: center;
 }
-.signup-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-}
-.signup-fade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 80% 90% at center,
-    rgba(58,45,82,0.55) 0%,
-    rgba(58,45,82,0.80) 45%,
-    rgba(58,45,82,0.94) 78%,
-    var(--dark) 100%);
-}
 .signup-content { position: relative; z-index: 2; }
-.signup-content .eyebrow { color: var(--light-lav); margin-bottom: 22px; }
+.signup-content .eyebrow { color: var(--dark); margin-bottom: 22px; }
 .signup-hook {
-  margin: 0 0 14px;
-  font-size: 48px;
-  line-height: 1.05;
+  margin: 0 0 16px;
+  font-size: 56px;
+  line-height: 1.04;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--white);
+  color: var(--dark);
 }
 .signup-sub {
-  margin: 0 auto 32px;
-  max-width: 520px;
-  font-size: 19px;
+  margin: 0 auto 40px;
+  max-width: 560px;
+  font-size: 20px;
   line-height: 1.5;
-  color: var(--light-lav);
+  color: var(--dark-2);
 }
 .signup-form {
   display: flex;
-  gap: 12px;
-  max-width: 520px;
+  gap: 14px;
+  max-width: 700px;
   margin: 0 auto;
 }
 .signup-form input[type="email"] {
   flex: 1;
   font-family: inherit;
-  font-size: 16px;
-  padding: 16px 20px;
-  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 19px;
+  padding: 26px 30px;
+  border: 1.5px solid rgba(58,45,82,0.22);
   border-radius: var(--r-pill);
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.96);
   color: var(--dark);
   outline: none;
-  transition: border-color 0.15s ease;
+  box-shadow: 0 10px 30px rgba(58,45,82,0.16);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.signup-form input[type="email"]:focus { border-color: var(--lavender); }
+.signup-form input[type="email"]:focus { border-color: var(--dark); box-shadow: 0 12px 34px rgba(58,45,82,0.24); }
 .signup-form input::placeholder { color: var(--muted); }
 .signup-form button {
   font-family: inherit;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
-  padding: 16px 28px;
+  padding: 26px 38px;
   border: none;
   border-radius: var(--r-pill);
-  background: var(--lavender);
-  color: var(--dark);
+  background: var(--dark);
+  color: #ffffff;
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(46,36,68,0.28);
   transition: transform 0.15s ease;
 }
 .signup-form button:hover { transform: translateY(-2px); }
@@ -642,7 +634,7 @@ a { color: inherit; }
   display: none;
   font-size: 22px;
   font-weight: 600;
-  color: var(--white);
+  color: var(--dark);
 }
 .signup-form.sent { display: none; }
 .signup-form.sent + .signup-thanks { display: block; }
@@ -693,7 +685,7 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   #bg-layer { transition: none; }
-  .hero-box { animation: none; }
+  .hero-box, .grad-panel { animation: none; }
   .hero-grain { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .reveal.in :where(.grid-3, .chip-grid, .ways-stack, .progress-stack) > * { animation: none; }
