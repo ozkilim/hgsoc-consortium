@@ -12,8 +12,11 @@
 </head>
 <body id="top">
 
-  <!-- ===== OFF-WHITE TOP ZONE: nav + hero ===== -->
-  <div class="top-zone">
+  <!-- Fixed colour layer; its colour is driven by scroll position (see script). -->
+  <div id="bg-layer"></div>
+
+  <!-- ===== TOP ZONE: nav + hero (light) ===== -->
+  <div class="top-zone" data-bg="light">
 
     <!-- NAV -->
     <header class="site-nav">
@@ -43,7 +46,7 @@
   </div>
 
   <!-- ZONE: purple (soft fade in from the off-white hero) -->
-  <div class="zone zone-purple fade-from-light">
+  <div class="zone zone-purple" data-bg="purple">
 
   <!-- WHAT WE'RE BUILDING -->
   <section class="wrap sec center reveal" id="what" style="padding-top:160px;">
@@ -85,7 +88,7 @@
   </div><!-- /zone purple -->
 
   <!-- ZONE: dark blue -->
-  <div class="zone zone-dark fade-from-purple">
+  <div class="zone zone-dark" data-bg="dark">
 
   <!-- FOUNDING INSTITUTIONS -->
   <section class="wrap wrap-wide sec reveal" id="cohort">
@@ -112,7 +115,7 @@
   </div><!-- /zone dark -->
 
   <!-- ZONE: off-white (from Boston to Seoul) -->
-  <div class="zone zone-light fade-from-dark">
+  <div class="zone zone-light" data-bg="light">
 
   <!-- WORLDWIDE EFFORT -->
   <section class="wrap wrap-wide sec reveal" id="worldwide">
@@ -198,7 +201,7 @@
   </div><!-- /zone light -->
 
   <!-- ZONE: purple (back to lavender) -->
-  <div class="zone zone-purple fade-from-light">
+  <div class="zone zone-purple" data-bg="purple">
 
   <!-- WAYS TO PARTICIPATE -->
   <section class="wrap wrap-wide sec reveal">
@@ -259,6 +262,11 @@
     <div class="supported">Ovarian Cancer Research Alliance</div>
   </section>
 
+  </div><!-- /zone purple -->
+
+  <!-- ZONE: off-white (final section) -->
+  <div class="zone zone-light" data-bg="light">
+
   <!-- EMAIL SIGNUP (kept from production, restyled) -->
   <section class="signup reveal" id="join">
     <div class="signup-box">
@@ -287,7 +295,7 @@
     </div>
   </section>
 
-  </div><!-- /zone purple -->
+  </div><!-- /zone light -->
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -409,6 +417,39 @@
         L.latLngBounds(cities.map(function(c) { return [c[0], c[1]]; })),
         { padding: [60, 60], maxZoom: 4 }
       );
+    })();
+  </script>
+
+  <script>
+    // Scroll-driven background. The fixed #bg-layer takes on the colour of the
+    // zone currently under a line ~40% down the viewport; the CSS transition on
+    // #bg-layer morphs the whole page background as you scroll between
+    // sections. Nothing is baked into the document flow. A scroll handler (not
+    // an IntersectionObserver) is used so the short final section at the page
+    // bottom — which can never reach the viewport centre — still activates.
+    (function() {
+      var layer = document.getElementById('bg-layer');
+      if (!layer) return;
+      var COLORS = { light: '#f4f1fd', purple: '#a99cf2', dark: '#232a4d' };
+      var zones = Array.prototype.slice.call(document.querySelectorAll('[data-bg]'));
+      if (!zones.length) return;
+      var ticking = false;
+      function apply() {
+        ticking = false;
+        var line = window.scrollY + window.innerHeight * 0.4;
+        var active = zones[0];
+        for (var i = 0; i < zones.length; i++) {
+          if (zones[i].offsetTop <= line) active = zones[i];
+        }
+        var c = COLORS[active.getAttribute('data-bg')];
+        if (c) layer.style.backgroundColor = c;
+      }
+      function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      apply();
     })();
   </script>
 </body>
