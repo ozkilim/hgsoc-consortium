@@ -43,7 +43,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;   /* clip (not hidden) so body stays a non-scrolling element */
 }
 
 ::selection { background: var(--dark-2); color: var(--light-lav); }
