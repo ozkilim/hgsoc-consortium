@@ -126,7 +126,7 @@ main {
 }
 
 .signup-form input[type="email"]:focus {
-  border-color: #1e3a5e;
+  border-color: #0F1C30;
 }
 
 .signup-form button {
@@ -136,7 +136,7 @@ main {
   padding: 14px 22px;
   border: none;
   border-radius: 8px;
-  background: #1e3a5e;
+  background: #0F1C30;
   color: #fdfcfa;
   cursor: pointer;
   white-space: nowrap;
@@ -150,7 +150,7 @@ main {
   font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-style: italic;
   font-size: 19px;
-  color: #1e3a5e;
+  color: #0F1C30;
 }
 
 .signup-form.sent { display: none; }
@@ -207,7 +207,7 @@ h1 {
   line-height: 1.05;
   letter-spacing: -0.025em;
   margin-bottom: 28px;
-  color: #1e3a5e;
+  color: #0F1C30;
 }
 
 h1 em {
@@ -218,7 +218,7 @@ h1 em {
 
 .lede {
   font-size: 19px;
-  color: #1e3a5e;
+  color: #0F1C30;
   line-height: 1.55;
   margin-bottom: 20px;
   max-width: 600px;
@@ -280,7 +280,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   transition: width 0.9s cubic-bezier(0.2, 0.65, 0.3, 1) 0.3s;
 }
 
-.bar-good { background: #1e3a5e; }
+.bar-good { background: #0F1C30; }
 .bar-bad { background: #b8534a; }
 
 .bar-value {
@@ -315,7 +315,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(30, 58, 94, 0.65);
+  color: rgba(15, 28, 48, 0.65);
   margin-bottom: 24px;
 }
 
@@ -456,7 +456,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
 .stat-bar-fill {
   height: 100%;
   width: 0;
-  background: #1e3a5e;
+  background: #0F1C30;
   border-radius: 100px;
   transition: width 1.4s cubic-bezier(0.2, 0.65, 0.3, 1) 0.5s;
 }
@@ -542,7 +542,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #1e3a5e;
+  background: #0F1C30;
   border: 3px solid #fdfcfa;
   box-shadow: 0 0 0 1px #d4d0c8;
   margin-bottom: 20px;
@@ -626,7 +626,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 20px;
   font-style: italic;
-  color: #1e3a5e;
+  color: #0F1C30;
   text-align: center;
   letter-spacing: -0.005em;
 }
@@ -639,20 +639,20 @@ p a:hover { text-decoration-color: #1a1a1a; }
   margin-top: 36px;
   padding: 16px 32px;
   background: #ffffff;
-  color: #1e3a5e;
+  color: #0F1C30;
   font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 15px;
   font-weight: 600;
   border-radius: 999px;
   border: none;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(30, 58, 94, 0.18);
+  box-shadow: 0 4px 14px rgba(15, 28, 48, 0.18);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .section-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(30, 58, 94, 0.28);
+  box-shadow: 0 10px 28px rgba(15, 28, 48, 0.28);
 }
 
 .cta-center { text-align: center; }
@@ -729,8 +729,8 @@ p a:hover { text-decoration-color: #1a1a1a; }
   gap: 24px;
   padding: 14px 32px;
   background: #ffffff;
-  border-bottom: 1px solid rgba(30, 58, 94, 0.08);
-  box-shadow: 0 2px 16px rgba(30, 58, 94, 0.06);
+  border-bottom: 1px solid rgba(15, 28, 48, 0.08);
+  box-shadow: 0 2px 16px rgba(15, 28, 48, 0.06);
 }
 
 .site-nav .brand-name {
@@ -738,7 +738,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.16em;
-  color: #1e3a5e;
+  color: #0F1C30;
   text-decoration: none;
 }
 
@@ -754,7 +754,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #1e3a5e;
+  color: #0F1C30;
   text-decoration: none;
   transition: opacity 0.15s ease;
 }
@@ -766,7 +766,7 @@ p a:hover { text-decoration-color: #1a1a1a; }
   align-items: center;
   gap: 6px;
   padding: 10px 22px;
-  background: #1e3a5e;
+  background: #0F1C30;
   color: #ffffff;
   font-family: 'PhantomTrace', -apple-system, sans-serif;
   font-size: 13.5px;
@@ -1113,7 +1113,7 @@ footer {
 }
 
 .world-map .leaflet-control-attribution a {
-  color: #1e3a5e;
+  color: #0F1C30;
 }
 
 .world-map .leaflet-control-zoom a {
@@ -1160,5 +1160,5 @@ footer {
 }
 
 .world-map .leaflet-interactive:hover {
-  filter: drop-shadow(0 0 6px rgba(30, 58, 94, 0.45));
+  filter: drop-shadow(0 0 6px rgba(15, 28, 48, 0.45));
 }
