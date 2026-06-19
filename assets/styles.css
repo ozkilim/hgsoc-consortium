@@ -14,6 +14,7 @@
   --card:       #fbfaff;  /* near-white card background                      */
   --white:      #ffffff;
   --light-lav:  #cfc4f7;  /* text on dark band                              */
+  --navy:       #232a4d;  /* dark-blue section background                    */
 
   --r-pill: 999px;
   --r-chip: 20px;
@@ -716,6 +717,43 @@ a { color: inherit; }
 .world-map .leaflet-popup-content { font-size: 13.5px; line-height: 1.45; margin: 12px 16px; }
 .world-map .leaflet-popup-tip { background: var(--dark); }
 .world-map .leaflet-popup-close-button { color: var(--light-lav); }
+
+/* ==========================================================================
+   Background zones — alternating colours with soft scroll-fade transitions
+   ========================================================================== */
+
+.zone {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 340px;   /* the fade gradient occupies the first 340px */
+  padding-bottom: 90px;
+}
+.zone-light  { background-color: var(--offwhite); }
+.zone-purple { background-color: var(--lavender); }
+.zone-dark   { background-color: var(--navy); }
+
+/* A zone softly fades in FROM the previous zone's colour over its top 340px.
+   Using rgba(...,0) of the same colour avoids a muddy fade-to-grey. */
+.fade-from-light  { background-image: linear-gradient(180deg, var(--offwhite), rgba(244,241,253,0)); }
+.fade-from-purple { background-image: linear-gradient(180deg, var(--lavender), rgba(169,156,242,0)); }
+.fade-from-dark   { background-image: linear-gradient(180deg, var(--navy),     rgba(35,42,77,0)); }
+
+/* Dark-blue zone: lift eyebrow + recolour the dark button so it reads. */
+.zone-dark .eyebrow      { color: var(--light-lav); }
+.zone-dark .btn--dark2   { background: var(--lavender); color: var(--dark); }
+
+/* Off-white zone: cards are near-white too, so give them lift to separate. */
+.zone-light .stat-card,
+.zone-light .evidence-card,
+.zone-light .work-card,
+.zone-light .member-card,
+.zone-light .chip,
+.zone-light .way-row {
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(58,45,82,0.10);
+}
+.zone-light .progress-track { background: #e7e2f8; }
 
 /* ==========================================================================
    Responsive
