@@ -150,7 +150,18 @@ a { color: inherit; }
   text-decoration: none;
   transition: color 0.5s ease;
 }
-.brand-logo { height: 1.3em; width: auto; flex: none; }
+.brand-logo {
+  flex: none;
+  display: inline-block;
+  height: 1.3em;
+  width: 0.8em;
+  background-color: var(--dark);
+  -webkit-mask: url("logo-white.png") center / contain no-repeat;
+          mask: url("logo-white.png") center / contain no-repeat;
+  transition: background-color 0.5s ease;
+}
+.site-nav.on-dark .brand-logo { background-color: var(--white); }
+.signup-logo { display: block; height: 60px; width: auto; margin: 0 auto 22px; }
 .hero-logo {
   height: 0.82em;
   width: auto;
