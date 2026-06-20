@@ -30,11 +30,11 @@
     <header class="site-nav">
       <a class="brand" href="#top">PLATINA</a>
       <nav class="nav-pill">
-        <a href="cohort.html">What's a cohort?</a>
+        <a href="#cohort">What's a cohort?</a>
         <a href="#worldwide">Worldwide effort</a>
-        <a href="#faqs">FAQs</a>
-        <a href="#team">Team</a>
         <a href="#evidence">Evidence</a>
+        <a href="#team">Team</a>
+        <a href="cohort.html">Cohort spec</a>
       </nav>
       <a class="btn btn--outline-dark nav-cta" href="#join">Get more info →</a>
     </header>
@@ -53,269 +53,324 @@
 
   </div>
 
-  <!-- ZONE: off-white (what we're building) -->
-  <div class="zone zone-light" data-bg="light">
-
-  <!-- WHAT WE'RE BUILDING -->
-  <section class="wrap sec center reveal" id="what" style="padding-top:160px;">
-    <p class="eyebrow">What we're building</p>
-    <h2 class="h2">A multimodal foundation model.</h2>
-    <p class="intro-copy">Built by leading cancer centers, trained on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients.</p>
-  </section>
-
-  </div><!-- /zone light -->
-
-  <!-- ZONE: purple -->
+  <!-- ===== THE STAKES (purple) — stats, pinned ===== -->
   <div class="zone zone-purple" data-bg="purple">
-
-  <!-- THE PROBLEM -->
-  <section class="wrap wrap-wide sec reveal" style="padding-top:140px;">
-    <p class="eyebrow center">The problem</p>
-    <div class="grid-3">
-      <div class="stat-card">
-        <div class="stat-num"><span class="num" data-count="207000">0</span></div>
-        <p class="stat-label">women die of ovarian cancer every year, worldwide</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="num" data-count="80">0</span><span class="stat-suffix">%</span></div>
-        <p class="stat-label">of HGSOC patients relapse after platinum</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="num" data-count="12">0</span><span class="stat-suffix"> months</span></div>
-        <p class="stat-label">median survival once platinum resistance sets in</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- RALLY BAND -->
-  <section class="wrap wrap-wide sec-tight reveal">
-    <div class="rally grad-panel grad-panel--dark">
-      <div class="hero-grain"></div>
-      <div class="rally-inner">
-        <h2>We reach 10,000 together.<br>Or we don't.</h2>
-        <div class="btn-row">
-          <a class="btn btn--lav" href="cohort.html">Add your cohort →</a>
-          <a class="btn btn--outline-light" href="cohort.html">What counts as a cohort? →</a>
+    <div class="pin" data-pin>
+      <div class="pin-stick">
+        <div class="wrap wrap-wide">
+          <p class="eyebrow center">The stakes</p>
+          <div class="grid-3 pin-cards">
+            <div class="stat-card">
+              <div class="stat-num"><span class="num" data-count="207000">0</span></div>
+              <p class="stat-label">women die of ovarian cancer every year, worldwide</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num"><span class="num" data-count="80">0</span><span class="stat-suffix">%</span></div>
+              <p class="stat-label">of HGSOC patients relapse after platinum</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num"><span class="num" data-count="12">0</span><span class="stat-suffix"> months</span></div>
+              <p class="stat-label">median survival once platinum resistance sets in</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  </div><!-- /zone purple -->
+  <!-- ===== THE TREATMENT GAP + SOLUTION (light) ===== -->
+  <div class="zone zone-light" data-bg="light">
 
-  <!-- ZONE: dark blue -->
+    <!-- Intro to the therapy section (normal flow) -->
+    <section class="wrap wrap-wide sec center reveal" style="padding-top:140px;">
+      <p class="eyebrow center">The treatment gap</p>
+      <h2 class="h2 center" style="font-size:clamp(30px,4.4vw,48px); max-width:920px; margin:0 auto 22px;">The problem was never a lack of options. It's that patients have to fail first.</h2>
+      <p class="lede center" style="max-width:760px; margin:0 auto;">The FDA has cleared real therapies for platinum-refractory ovarian cancer — but every one of them is gated behind the same thing: documented failure on platinum chemotherapy. For the 20–30% of patients whose tumors were never going to respond, that means months of toxicity, disease progression, and lost time before they reach a drug that might have worked from day one. We can identify them upfront.</p>
+    </section>
+
+    <!-- Therapy cards, pinned + revealed one-by-one -->
+    <div class="pin" data-pin>
+      <div class="pin-stick">
+        <div class="wrap wrap-wide">
+          <div class="grid-3 pin-cards">
+            <a class="therapy-card" href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-regular-approval-mirvetuximab-soravtansine-gynx-platinum-resistant-ovarian-cancer" target="_blank" rel="noopener">
+              <div class="therapy-tag">FRα-targeted ADC · approved 2024</div>
+              <h3 class="therapy-name">Mirvetuximab soravtansine<span>Elahere</span></h3>
+              <p class="therapy-desc">First therapy to improve overall survival in platinum-resistant disease. Requires FRα-positive tumor selection and 1–3 prior regimens.</p>
+              <span class="therapy-link">FDA approval →</span>
+            </a>
+            <a class="therapy-card" href="https://www.onclive.com/view/relacorilant-plus-nab-paclitaxel-improves-survival-in-platinum-resistant-ovarian-cancer" target="_blank" rel="noopener">
+              <div class="therapy-tag">GR antagonist + chemo · approved 2026</div>
+              <h3 class="therapy-name">Relacorilant + nab-paclitaxel<span>Lifyorli</span></h3>
+              <p class="therapy-desc">Biomarker-agnostic combination. ROSELLA showed improved PFS and OS over nab-paclitaxel alone in previously treated patients.</p>
+              <span class="therapy-link">OncLive →</span>
+            </a>
+            <a class="therapy-card" href="https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab" target="_blank" rel="noopener">
+              <div class="therapy-tag">Anti-angiogenic · established standard</div>
+              <h3 class="therapy-name">Bevacizumab regimens<span>Avastin</span></h3>
+              <p class="therapy-desc">The long-standing backbone for resistant disease, added to single-agent chemo. Modest benefit, still reached only after platinum fails.</p>
+              <span class="therapy-link">NCI background →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridge bar -->
+    <section class="wrap wrap-wide reveal" style="padding-top:24px;">
+      <p class="bridge">Every option above starts the clock <strong>after</strong> the failure. A validated chemo-response predictor moves the decision to <strong>day one</strong> — before the first wasted cycle.</p>
+    </section>
+
+    <!-- THE SOLUTION: foundation model -->
+    <section class="wrap sec center reveal" id="what" style="padding-top:150px;">
+      <p class="eyebrow">The solution</p>
+      <h2 class="h2">A multimodal foundation model.</h2>
+      <p class="intro-copy">So we're building one — trained by leading cancer centers on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients, to predict platinum response before the first wasted cycle.</p>
+    </section>
+
+  </div>
+
+  <!-- ===== RALLY (purple) ===== -->
+  <div class="zone zone-purple" data-bg="purple">
+    <section class="wrap wrap-wide sec reveal">
+      <div class="rally grad-panel grad-panel--dark">
+        <div class="hero-grain"></div>
+        <div class="rally-inner">
+          <h2>We reach 10,000 together.<br>Or we don't.</h2>
+          <div class="btn-row">
+            <a class="btn btn--lav" href="cohort.html">Add your cohort →</a>
+            <a class="btn btn--outline-light" href="cohort.html">What counts as a cohort? →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== FOUNDING INSTITUTIONS (dark blue) ===== -->
   <div class="zone zone-dark" data-bg="dark">
+    <section class="wrap wrap-wide sec reveal" id="cohort">
+      <p class="eyebrow center">Founding institutions</p>
+      <div class="chip-grid">
+        <div class="chip"><span class="dot"></span><span class="name">Dana-Farber Cancer Institute</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Brigham &amp; Women's Hospital</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Boston Children's Hospital</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Massachusetts General Hospital</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Harvard Medical School</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Peter MacCallum Cancer Centre</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Semmelweis University</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">OHSU Knight Cancer Institute</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Yonsei University College of Medicine</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Severance Hospital</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Oslo University Hospital</span></div>
+        <div class="chip"><span class="dot"></span><span class="name">Hungarian Oncology Institute</span></div>
+      </div>
+      <div class="cta-after">
+        <a class="btn btn--dark2" href="#join">Add your institution →</a>
+      </div>
+    </section>
+  </div>
 
-  <!-- FOUNDING INSTITUTIONS -->
-  <section class="wrap wrap-wide sec reveal" id="cohort">
-    <p class="eyebrow center">Founding institutions</p>
-    <div class="chip-grid">
-      <div class="chip"><span class="dot"></span><span class="name">Dana-Farber Cancer Institute</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Brigham &amp; Women's Hospital</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Boston Children's Hospital</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Massachusetts General Hospital</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Harvard Medical School</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Peter MacCallum Cancer Centre</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Semmelweis University</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">OHSU Knight Cancer Institute</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Yonsei University College of Medicine</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Severance Hospital</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Oslo University Hospital</span></div>
-      <div class="chip"><span class="dot"></span><span class="name">Hungarian Oncology Institute</span></div>
-    </div>
-    <div class="cta-after">
-      <a class="btn btn--dark2" href="#join">Add your institution →</a>
-    </div>
-  </section>
-
-  </div><!-- /zone dark -->
-
-  <!-- ZONE: off-white (from Boston to Seoul) -->
+  <!-- ===== WORLDWIDE + EVIDENCE + PROGRESS + HOW WE WORK (light) ===== -->
   <div class="zone zone-light" data-bg="light">
 
-  <!-- WORLDWIDE EFFORT -->
-  <section class="wrap wrap-wide sec reveal" id="worldwide">
-    <div class="map-head">
-      <p class="eyebrow">Worldwide effort</p>
-      <h2 class="h2 h2-56">From Boston to Seoul to Melbourne.</h2>
-      <p class="map-sub">Twelve founding institutions across four continents, tied together by one shared cohort.</p>
-    </div>
-    <div id="world-map" class="world-map" aria-label="Map of founding institution cities"></div>
-  </section>
-
-  <!-- EVIDENCE -->
-  <section class="wrap wrap-wide sec reveal" id="evidence">
-    <p class="eyebrow center">Evidence</p>
-    <div class="evidence-card">
-      <div>
-        <div class="evidence-title">npj Precision Oncology · 2025</div>
-        <div class="evidence-doi">doi.org/10.1038/s41698-025-00808-w</div>
+    <!-- WORLDWIDE EFFORT -->
+    <section class="wrap wrap-wide sec reveal" id="worldwide">
+      <div class="map-head">
+        <p class="eyebrow">Worldwide effort</p>
+        <h2 class="h2 h2-56">From Boston to Seoul to Melbourne.</h2>
+        <p class="map-sub">Twelve founding institutions across four continents, tied together by one shared cohort.</p>
       </div>
-      <div class="evidence-actions">
-        <a class="btn btn--dark" href="https://www.nature.com/articles/s41698-025-00808-w" target="_blank" rel="noopener">Read paper →</a>
-        <a class="btn btn--ghost-dark" href="#join">Partner with us →</a>
-      </div>
-    </div>
-  </section>
+      <div id="world-map" class="world-map" aria-label="Map of founding institution cities"></div>
+    </section>
 
-  <!-- TOWARD 10,000 -->
-  <section class="wrap sec reveal">
-    <p class="eyebrow center">Toward 10,000</p>
-    <div class="progress-stack">
-      <div>
-        <div class="progress-head">
-          <span class="progress-label">HGSOC patients enrolled</span>
-          <span class="progress-val">1,240 / 10,000</span>
+    <!-- EVIDENCE -->
+    <section class="wrap wrap-wide sec reveal" id="evidence">
+      <p class="eyebrow center">Evidence</p>
+      <div class="evidence-card">
+        <div>
+          <div class="evidence-title">npj Precision Oncology · 2025</div>
+          <div class="evidence-doi">doi.org/10.1038/s41698-025-00808-w</div>
         </div>
-        <div class="progress-track"><div class="progress-fill" style="--pct:12.4%;"></div></div>
-      </div>
-      <div>
-        <div class="progress-head">
-          <span class="progress-label">H&amp;E whole-slide images</span>
-          <span class="progress-val">3,800 / 30,000</span>
+        <div class="evidence-actions">
+          <a class="btn btn--dark" href="https://www.nature.com/articles/s41698-025-00808-w" target="_blank" rel="noopener">Read paper →</a>
+          <a class="btn btn--ghost-dark" href="#join">Partner with us →</a>
         </div>
-        <div class="progress-track"><div class="progress-fill" style="--pct:12.7%;"></div></div>
       </div>
-      <div>
-        <div class="progress-head">
-          <span class="progress-label">multimodal cases</span>
-          <span class="progress-val">680 / 6,000</span>
+    </section>
+
+    <!-- TOWARD 10,000 -->
+    <section class="wrap sec reveal">
+      <p class="eyebrow center">Toward 10,000</p>
+      <div class="progress-stack">
+        <div>
+          <div class="progress-head">
+            <span class="progress-label">HGSOC patients enrolled</span>
+            <span class="progress-val">1,240 / 10,000</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="--pct:12.4%;"></div></div>
         </div>
-        <div class="progress-track"><div class="progress-fill" style="--pct:11.3%;"></div></div>
+        <div>
+          <div class="progress-head">
+            <span class="progress-label">H&amp;E whole-slide images</span>
+            <span class="progress-val">3,800 / 30,000</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="--pct:12.7%;"></div></div>
+        </div>
+        <div>
+          <div class="progress-head">
+            <span class="progress-label">multimodal cases</span>
+            <span class="progress-val">680 / 6,000</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="--pct:11.3%;"></div></div>
+        </div>
       </div>
-    </div>
-    <div class="cta-after" style="margin-top:48px;">
-      <a class="btn btn--dark" href="#join">Help us reach 10,000 →</a>
-    </div>
-  </section>
+      <div class="cta-after" style="margin-top:48px;">
+        <a class="btn btn--dark" href="#join">Help us reach 10,000 →</a>
+      </div>
+    </section>
 
-  <!-- HOW WE WORK -->
-  <section class="wrap wrap-wide sec reveal">
-    <p class="eyebrow center">How we work</p>
-    <div class="grid-3">
-      <div class="work-card">
-        <div class="icon-tile"><span class="inner"></span></div>
-        <h3>Co-authorship by default</h3>
-        <p>Every contributing institution receives co-authorship on flagship papers. Cohort PIs sit on the publications committee.</p>
-      </div>
-      <div class="work-card">
-        <div class="icon-tile"><span class="inner"></span></div>
-        <h3>Data stays with you</h3>
-        <p>Federated-first. We ship the training and evaluation container; slides and clinical data never leave your firewall unless you opt in.</p>
-      </div>
-      <div class="work-card">
-        <div class="icon-tile"><span class="inner"></span></div>
-        <h3>IRB &amp; DTA ready</h3>
-        <p>Template DTA, IRB protocol language, and a HIPAA-compliant pipeline on day one. The legal groundwork is done.</p>
+    <!-- HOW WE WORK — pinned -->
+    <section class="wrap wrap-wide sec center reveal">
+      <p class="eyebrow center">How we work</p>
+    </section>
+    <div class="pin" data-pin>
+      <div class="pin-stick">
+        <div class="wrap wrap-wide">
+          <div class="grid-3 pin-cards">
+            <div class="work-card">
+              <div class="icon-tile"><span class="inner"></span></div>
+              <h3>Co-authorship by default</h3>
+              <p>Every contributing institution receives co-authorship on flagship papers. Cohort PIs sit on the publications committee.</p>
+            </div>
+            <div class="work-card">
+              <div class="icon-tile"><span class="inner"></span></div>
+              <h3>Data stays with you</h3>
+              <p>Federated-first. We ship the training and evaluation container; slides and clinical data never leave your firewall unless you opt in.</p>
+            </div>
+            <div class="work-card">
+              <div class="icon-tile"><span class="inner"></span></div>
+              <h3>IRB &amp; DTA ready</h3>
+              <p>Template DTA, IRB protocol language, and a HIPAA-compliant pipeline on day one. The legal groundwork is done.</p>
+            </div>
+          </div>
+          <div class="cta-after">
+            <a class="btn btn--dark2" href="#join">Start the conversation →</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="cta-after">
-      <a class="btn btn--dark2" href="#join">Start the conversation →</a>
-    </div>
-  </section>
 
-  </div><!-- /zone light -->
+  </div>
 
-  <!-- ZONE: purple (back to lavender) -->
+  <!-- ===== WAYS + TEAM + SUPPORTED (purple) ===== -->
   <div class="zone zone-purple" data-bg="purple">
 
-  <!-- WAYS TO PARTICIPATE -->
-  <section class="wrap wrap-wide sec reveal">
-    <p class="eyebrow center">Ways to participate</p>
-    <div class="ways-stack">
-      <div class="way-row">
-        <div class="way-num">01</div>
-        <div class="way-body">
-          <h3>Join the consortium</h3>
-          <p>Become a founding partner. Co-develop the foundation model. Co-author the science.</p>
+    <!-- WAYS TO PARTICIPATE — pinned -->
+    <section class="wrap wrap-wide sec center reveal">
+      <p class="eyebrow center">Ways to participate</p>
+    </section>
+    <div class="pin" data-pin>
+      <div class="pin-stick">
+        <div class="wrap wrap-wide">
+          <div class="ways-stack pin-cards">
+            <div class="way-row">
+              <div class="way-num">01</div>
+              <div class="way-body">
+                <h3>Join the consortium</h3>
+                <p>Become a founding partner. Co-develop the foundation model. Co-author the science.</p>
+              </div>
+              <a class="btn btn--dark" href="#join">Become a partner →</a>
+            </div>
+            <div class="way-row">
+              <div class="way-num">02</div>
+              <div class="way-body">
+                <h3>Add your cohort</h3>
+                <p>Bring your HGSOC patients into the 10,000. More data in, stronger model out. Shared credit, shared model.</p>
+              </div>
+              <a class="btn btn--dark" href="cohort.html">See what counts as a cohort →</a>
+            </div>
+            <div class="way-row">
+              <div class="way-num">03</div>
+              <div class="way-body">
+                <h3>Validate locally</h3>
+                <p>Run the model on your cohort. No data leaves your site. We ship the container, you return the metrics.</p>
+              </div>
+              <a class="btn btn--dark" href="#join">Run validation →</a>
+            </div>
+          </div>
         </div>
-        <a class="btn btn--dark" href="#join">Become a partner →</a>
-      </div>
-      <div class="way-row">
-        <div class="way-num">02</div>
-        <div class="way-body">
-          <h3>Add your cohort</h3>
-          <p>Bring your HGSOC patients into the 10,000. More data in, stronger model out. Shared credit, shared model.</p>
-        </div>
-        <a class="btn btn--dark" href="cohort.html">See what counts as a cohort →</a>
-      </div>
-      <div class="way-row">
-        <div class="way-num">03</div>
-        <div class="way-body">
-          <h3>Validate locally</h3>
-          <p>Run the model on your cohort. No data leaves your site. We ship the container, you return the metrics.</p>
-        </div>
-        <a class="btn btn--dark" href="#join">Run validation →</a>
       </div>
     </div>
-  </section>
 
-  <!-- TEAM -->
-  <section class="wrap wrap-wide sec reveal" id="team">
-    <p class="eyebrow center">Team</p>
-    <div class="grid-3">
-      <div class="member-card">
-        <div class="member-avatar"></div>
-        <h3>Zoltan Szallasi, MD</h3>
-        <p class="role">PI</p>
-      </div>
-      <div class="member-card">
-        <div class="member-avatar"></div>
-        <h3>Oz Kilim, PhD</h3>
-        <p class="role">ML &amp; Multimodal Modeling</p>
-      </div>
-      <div class="member-card">
-        <div class="member-avatar"></div>
-        <h3>Zsofia Sztupinszki, MD, PhD</h3>
-        <p class="role">Clinical Oncology</p>
+    <!-- TEAM — pinned -->
+    <section class="wrap wrap-wide sec center reveal" id="team">
+      <p class="eyebrow center">Team</p>
+    </section>
+    <div class="pin" data-pin>
+      <div class="pin-stick">
+        <div class="wrap wrap-wide">
+          <div class="grid-3 pin-cards">
+            <div class="member-card">
+              <div class="member-avatar"></div>
+              <h3>Zoltan Szallasi, MD</h3>
+              <p class="role">PI</p>
+            </div>
+            <div class="member-card">
+              <div class="member-avatar"></div>
+              <h3>Oz Kilim, PhD</h3>
+              <p class="role">ML &amp; Multimodal Modeling</p>
+            </div>
+            <div class="member-card">
+              <div class="member-avatar"></div>
+              <h3>Zsofia Sztupinszki, MD, PhD</h3>
+              <p class="role">Clinical Oncology</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- SUPPORTED BY -->
-  <section class="wrap sec center reveal">
-    <p class="eyebrow">Supported by</p>
-    <div class="supported">Ovarian Cancer Research Alliance</div>
-  </section>
+    <!-- SUPPORTED BY -->
+    <section class="wrap sec center reveal">
+      <p class="eyebrow">Supported by</p>
+      <div class="supported">Ovarian Cancer Research Alliance</div>
+    </section>
 
-  </div><!-- /zone purple -->
+  </div>
 
-  <!-- ZONE: off-white (final section) -->
+  <!-- ===== SIGNUP (light) ===== -->
   <div class="zone zone-light" data-bg="light">
+    <section class="signup reveal" id="join">
+      <div class="signup-box grad-panel">
+        <div class="hero-grain"></div>
+        <div class="signup-content">
+          <p class="eyebrow">Join the consortium</p>
+          <h2 class="signup-hook">Bring your cohort into the 10,000.</h2>
+          <p class="signup-sub">Leave your email and we'll be in touch about becoming a partner, contributing a cohort, or running federated validation at your site.</p>
 
-  <!-- EMAIL SIGNUP (kept from production, restyled) -->
-  <section class="signup reveal" id="join">
-    <div class="signup-box grad-panel">
-      <div class="hero-grain"></div>
-      <div class="signup-content">
-        <p class="eyebrow">Join the consortium</p>
-        <h2 class="signup-hook">Bring your cohort into the 10,000.</h2>
-        <p class="signup-sub">Leave your email and we'll be in touch about becoming a partner, contributing a cohort, or running federated validation at your site.</p>
-
-        <!-- EMAIL COLLECTION: wired to the consortium Google Form.
-             Form: docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ
-             Email field: entry.1953270115 -->
-        <form class="signup-form"
-              action="https://docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ/formResponse"
-              method="POST" target="gform-sink">
-          <input type="email" name="entry.1953270115" required
-                 placeholder="you@institution.edu" aria-label="Email address" />
-          <button type="submit">Get more information →</button>
-        </form>
-        <div class="signup-thanks">Thanks, we'll be in touch shortly.</div>
-        <iframe name="gform-sink" title="form sink" style="display:none"></iframe>
+          <!-- EMAIL COLLECTION: wired to the consortium Google Form.
+               Form: docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ
+               Email field: entry.1953270115 -->
+          <form class="signup-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSe9IHHmgFVepxrMN88-QqiPW1mZJiQuVL_sS_vrkhkeqKmWdQ/formResponse"
+                method="POST" target="gform-sink">
+            <input type="email" name="entry.1953270115" required
+                   placeholder="you@institution.edu" aria-label="Email address" />
+            <button type="submit">Get more information →</button>
+          </form>
+          <div class="signup-thanks">Thanks, we'll be in touch shortly.</div>
+          <iframe name="gform-sink" title="form sink" style="display:none"></iframe>
+        </div>
       </div>
-    </div>
-  </section>
-
-  </div><!-- /zone light -->
+    </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <a class="footer-brand" href="#top">PLATINA</a>
       <nav class="footer-links">
-        <a href="#faqs">FAQs</a>
+        <a href="#cohort">Cohort</a>
         <a href="#team">Team</a>
         <a href="#evidence">Evidence</a>
         <a href="#join">Contact</a>
@@ -325,15 +380,32 @@
   </footer>
 
   <script>
-    // Scroll-reveal + count-up animation for stat numbers.
+    // Scroll-reveal for non-pinned sections.
+    (function() {
+      var targets = document.querySelectorAll('.reveal');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        targets.forEach(function(el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      targets.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
+
+  <script>
+    // Count-up for stat numbers — independent of the reveal/pin systems.
     (function() {
       var fmt = new Intl.NumberFormat('en-US');
-
-      function setFinalCount(el) {
-        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-        el.textContent = fmt.format(target);
-      }
-
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function setFinal(el) { el.textContent = fmt.format(parseInt(el.getAttribute('data-count'), 10) || 0); }
       function countUp(el, duration) {
         var target = parseInt(el.getAttribute('data-count'), 10) || 0;
         var start = performance.now();
@@ -345,36 +417,22 @@
         }
         requestAnimationFrame(tick);
       }
-
-      var targets = document.querySelectorAll('.reveal');
       var counters = document.querySelectorAll('[data-count]');
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
       if (!('IntersectionObserver' in window) || prefersReduced) {
-        targets.forEach(function(el) { el.classList.add('in'); });
-        counters.forEach(setFinalCount);
+        counters.forEach(setFinal);
         return;
       }
-
       var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            entry.target.querySelectorAll('[data-count]').forEach(function(el) {
-              countUp(el, 1400);
-            });
-            io.unobserve(entry.target);
-          }
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { countUp(e.target, 1400); io.unobserve(e.target); }
         });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-      targets.forEach(function(el) { io.observe(el); });
+      }, { threshold: 0.4 });
+      counters.forEach(function(el) { io.observe(el); });
     })();
   </script>
 
   <script>
-    // Email signup: posts into the hidden iframe so the page never navigates,
-    // then optimistically swaps the form for a thank-you.
+    // Email signup: posts into the hidden iframe, then optimistically shows thanks.
     (function() {
       var form = document.querySelector('.signup-form');
       if (!form) return;
@@ -384,62 +442,9 @@
     })();
   </script>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
-    // Worldwide-effort map: Leaflet with CARTO light tiles, one circle marker
-    // per founding-institution city, each with a popup. Boston is a single
-    // marker representing its 5 institutions.
-    (function() {
-      var el = document.getElementById('world-map');
-      if (!el || typeof L === 'undefined') return;
-
-      var map = L.map(el, {
-        zoomControl: true,
-        scrollWheelZoom: false,
-        minZoom: 1,
-        maxZoom: 8,
-        worldCopyJump: true
-      });
-
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-      }).addTo(map);
-
-      var cities = [
-        [42.34,   -71.10, 'Boston, USA (5 institutions)'],
-        [45.50,  -122.68, 'Portland, USA — OHSU Knight'],
-        [59.91,    10.75, 'Oslo, Norway — Oslo University Hospital'],
-        [47.49,    19.04, 'Budapest, Hungary — Semmelweis & Hungarian Oncology Institute'],
-        [37.56,   126.94, 'Seoul, South Korea — Yonsei & Severance'],
-        [-37.81,  144.96, 'Melbourne, Australia — Peter MacCallum']
-      ];
-
-      cities.forEach(function(c) {
-        L.circleMarker([c[0], c[1]], {
-          radius: 8,
-          color: '#3a2d52',
-          weight: 2.5,
-          fillColor: '#a99cf2',
-          fillOpacity: 1
-        }).addTo(map).bindPopup(c[2]);
-      });
-
-      map.fitBounds(
-        L.latLngBounds(cities.map(function(c) { return [c[0], c[1]]; })),
-        { padding: [60, 60], maxZoom: 4 }
-      );
-    })();
-  </script>
-
-  <script>
-    // Scroll-driven background. The fixed #bg-layer takes on the colour of the
-    // zone currently under a line ~40% down the viewport; the CSS transition on
-    // #bg-layer morphs the whole page background as you scroll between
-    // sections. Nothing is baked into the document flow. A scroll handler (not
-    // an IntersectionObserver) is used so the short final section at the page
-    // bottom — which can never reach the viewport centre — still activates.
+    // Scroll-driven background colour: #bg-layer takes the colour of whichever
+    // zone is under a line ~40% down the viewport; the nav adapts on dark zones.
     (function() {
       var layer = document.getElementById('bg-layer');
       if (!layer) return;
@@ -458,16 +463,99 @@
         var theme = active.getAttribute('data-bg');
         var c = COLORS[theme];
         if (c) layer.style.backgroundColor = c;
-        // The whole viewport background is one uniform colour, so the nav can
-        // adapt to the same active theme to stay legible.
         if (nav) nav.classList.toggle('on-dark', theme === 'dark');
       }
-      function onScroll() {
-        if (!ticking) { ticking = true; requestAnimationFrame(apply); }
-      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll);
       apply();
+    })();
+  </script>
+
+  <script>
+    // Scroll-pinned card reveal: each [data-pin] section locks to the screen
+    // while its cards slide into line one-by-one, tied to scroll progress.
+    // Disabled on narrow screens and for reduced-motion (cards just show).
+    (function() {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var pins = Array.prototype.slice.call(document.querySelectorAll('[data-pin]'));
+      if (!pins.length) return;
+      var root = document.documentElement;
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function cardsOf(pin) { return Array.prototype.slice.call(pin.querySelectorAll('.pin-cards > *')); }
+
+      var active = false;
+      function layout() {
+        active = !reduce && window.innerWidth > 760;
+        root.classList.toggle('pin-ready', active);
+        pins.forEach(function(pin) {
+          var cards = cardsOf(pin);
+          if (!active) {
+            pin.classList.add('pin-off');
+            pin.style.height = '';
+            cards.forEach(function(c) { c.style.opacity = ''; c.style.transform = ''; });
+            return;
+          }
+          pin.classList.remove('pin-off');
+          var step = window.innerHeight * 0.6;            // scroll distance per card
+          pin.style.height = (window.innerHeight + cards.length * step) + 'px';
+        });
+        update();
+      }
+
+      function update() {
+        if (!active) return;
+        var vh = window.innerHeight;
+        pins.forEach(function(pin) {
+          var cards = cardsOf(pin);
+          var n = cards.length;
+          var rect = pin.getBoundingClientRect();
+          var total = pin.offsetHeight - vh;
+          var progress = total > 0 ? clamp(-rect.top / total, 0, 1) : 1;
+          cards.forEach(function(card, i) {
+            var t = clamp(progress * (n + 0.6) - i, 0, 1);
+            var e = easeOut(t);
+            card.style.opacity = e;
+            card.style.transform = 'translateY(' + ((1 - e) * 70) + 'px) scale(' + (0.96 + e * 0.04) + ')';
+          });
+        });
+      }
+
+      var ticking = false;
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(function() { ticking = false; update(); }); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', layout);
+      window.addEventListener('load', layout);
+      layout();
+    })();
+  </script>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Worldwide-effort map: Leaflet + CARTO light tiles, one circle marker per
+    // founding-institution city, each with a popup.
+    (function() {
+      var el = document.getElementById('world-map');
+      if (!el || typeof L === 'undefined') return;
+      var map = L.map(el, { zoomControl: true, scrollWheelZoom: false, minZoom: 1, maxZoom: 8, worldCopyJump: true });
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd', maxZoom: 19
+      }).addTo(map);
+      var cities = [
+        [42.34,   -71.10, 'Boston, USA (5 institutions)'],
+        [45.50,  -122.68, 'Portland, USA — OHSU Knight'],
+        [59.91,    10.75, 'Oslo, Norway — Oslo University Hospital'],
+        [47.49,    19.04, 'Budapest, Hungary — Semmelweis & Hungarian Oncology Institute'],
+        [37.56,   126.94, 'Seoul, South Korea — Yonsei & Severance'],
+        [-37.81,  144.96, 'Melbourne, Australia — Peter MacCallum']
+      ];
+      cities.forEach(function(c) {
+        L.circleMarker([c[0], c[1]], { radius: 8, color: '#3a2d52', weight: 2.5, fillColor: '#a99cf2', fillOpacity: 1 })
+          .addTo(map).bindPopup(c[2]);
+      });
+      map.fitBounds(L.latLngBounds(cities.map(function(c) { return [c[0], c[1]]; })), { padding: [60, 60], maxZoom: 4 });
     })();
   </script>
 </body>

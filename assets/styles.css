@@ -34,7 +34,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; overflow-x: clip; }
 
 body {
   font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -43,7 +43,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;   /* clip (not hidden) so body stays a non-scrolling element */
 }
 
 ::selection { background: var(--dark-2); color: var(--light-lav); }
@@ -777,11 +776,76 @@ a { color: inherit; }
 .zone-light .work-card,
 .zone-light .member-card,
 .zone-light .chip,
-.zone-light .way-row {
+.zone-light .way-row,
+.zone-light .therapy-card {
   background: #ffffff;
   box-shadow: 0 14px 40px rgba(58,45,82,0.10);
 }
 .zone-light .progress-track { background: #e7e2f8; }
+
+/* ---------- Therapy options cards (the treatment gap) --------------------- */
+.therapy-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: var(--r-card);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.therapy-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(58,45,82,0.18); }
+.therapy-tag {
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+}
+.therapy-name {
+  margin: 0 0 14px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--dark); line-height: 1.25;
+}
+.therapy-name span { display: block; margin-top: 5px; font-size: 15px; font-weight: 600; color: var(--muted); }
+.therapy-desc { margin: 0 0 22px; font-size: 15.5px; line-height: 1.55; color: var(--muted); flex: 1; }
+.therapy-link { font-size: 15px; font-weight: 700; color: var(--dark); }
+.therapy-card:hover .therapy-link { color: var(--dark-2); }
+
+/* ---------- Bridge bar ---------------------------------------------------- */
+.bridge {
+  max-width: 1000px;
+  margin: 64px auto 0;
+  padding: 36px 44px;
+  border-radius: var(--r-card);
+  background: rgba(169,156,242,0.18);
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--dark);
+}
+.bridge strong { color: var(--dark); }
+
+/* ---------- Scroll-pinned card reveal ------------------------------------- */
+.pin { position: relative; }
+.pin-stick {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 96px 0;
+}
+.pin-stick > .wrap,
+.pin-stick > .wrap-wide { width: 100%; }
+/* Cards start hidden only while JS is actively pinning (desktop + motion on). */
+.pin-ready .pin-cards > * { opacity: 0; will-change: transform, opacity; }
+.pin-off,
+.pin-off .pin-stick {
+  position: static;
+  min-height: 0;
+  height: auto !important;
+  padding: 0;
+}
 
 /* ==========================================================================
    Responsive
