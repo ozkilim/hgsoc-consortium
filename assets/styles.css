@@ -140,12 +140,24 @@ a { color: inherit; }
 
 .brand {
   flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 23px;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: var(--dark);
   text-decoration: none;
   transition: color 0.5s ease;
+}
+.brand-logo { height: 1.3em; width: auto; flex: none; }
+.hero-logo {
+  height: 0.82em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 0.14em;
+  position: relative;
+  top: -0.05em;
 }
 
 /* Nav adapts to the dynamic background: on the dark (navy) zone the wordmark
