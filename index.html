@@ -128,6 +128,19 @@
       <p class="intro-copy">So we're building one — trained by leading cancer centers on H&amp;E histology, genomics, and clinical data from a pool of 10,000 HGSOC patients, to predict platinum response before the first wasted cycle.</p>
     </section>
 
+    <!-- WHY SCALE — patients × modalities matrix -->
+    <section class="wrap wrap-wide sec reveal">
+      <div class="map-head">
+        <p class="eyebrow">Why scale</p>
+        <h2 class="h2 h2-56">Scaling laws haven't reached the clinic — yet.</h2>
+        <p class="map-sub">Language models got predictably better with scale. Real clinical tasks haven't seen that curve yet. There are two ways to scale — more patients, or more modalities per patient. We're scaling both.</p>
+      </div>
+      <div class="scale-sheet">
+        <div class="scale-grid" id="scaleGrid" aria-hidden="true"></div>
+        <p class="scale-caption">Every patient × every modality — H&amp;E, RNA-seq, WES, methylation, proteomics, clinical — scaling both axes toward 10,000.</p>
+      </div>
+    </section>
+
   </div>
 
   <!-- ===== RALLY (purple) ===== -->
@@ -528,6 +541,26 @@
       window.addEventListener('resize', layout);
       window.addEventListener('load', layout);
       layout();
+    })();
+  </script>
+
+  <script>
+    // Build the decorative patients × modalities scaling matrix.
+    (function() {
+      var grid = document.getElementById('scaleGrid');
+      if (!grid) return;
+      var mods = ['H&E', 'RNA-seq', 'WES', 'Methylation', 'Proteomics', 'Clinical'];
+      var rows = 9;
+      grid.style.gridTemplateColumns = '78px repeat(' + mods.length + ', 1fr)';
+      var html = '<div class="sg-corner">patient \\ modality</div>';
+      mods.forEach(function(m) { html += '<div class="sg-col">' + m + '</div>'; });
+      for (var r = 1; r <= rows; r++) {
+        html += '<div class="sg-row">P-' + String(r).padStart(4, '0') + '</div>';
+        for (var c = 0; c < mods.length; c++) {
+          html += '<div class="sg-cell' + (Math.random() > 0.12 ? ' on' : '') + '"></div>';
+        }
+      }
+      grid.innerHTML = html;
     })();
   </script>
 

@@ -847,6 +847,45 @@ a { color: inherit; }
   padding: 0;
 }
 
+/* ---------- Scaling matrix (why so many cases) ---------------------------- */
+.scale-sheet {
+  position: relative;
+  margin-top: 44px;
+  border-radius: var(--r-lg);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(58,45,82,0.08);
+  box-shadow: 0 14px 40px rgba(58,45,82,0.08);
+  padding: 30px 30px 26px;
+  overflow: hidden;
+}
+.scale-grid {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  -webkit-mask-image: linear-gradient(to right, #000 52%, transparent 94%), linear-gradient(to bottom, #000 56%, transparent 96%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, #000 52%, transparent 94%), linear-gradient(to bottom, #000 56%, transparent 96%);
+          mask-composite: intersect;
+}
+.sg-corner {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--muted); display: flex; align-items: flex-end; padding-bottom: 6px;
+}
+.sg-col {
+  font-size: 12.5px; font-weight: 700; color: var(--dark);
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; white-space: nowrap;
+}
+.sg-row {
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  display: flex; align-items: center; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.sg-cell { height: 30px; border-radius: 7px; background: rgba(58,45,82,0.07); }
+.sg-cell.on { background: var(--lavender); }
+.scale-caption {
+  margin: 22px auto 0; max-width: 760px;
+  font-size: 14px; line-height: 1.5; color: var(--muted); text-align: center;
+}
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
