@@ -164,9 +164,9 @@ a { color: inherit; }
 .signup-logo { display: block; height: 60px; width: auto; margin: 0 auto 22px; }
 .hero-logo {
   display: block;
-  height: clamp(64px, 9vw, 104px);
+  height: clamp(140px, 18vw, 240px);
   width: auto;
-  margin: 0 auto 30px;
+  margin: 0 auto 36px;
 }
 
 /* Nav adapts to the dynamic background: on the dark (navy) zone the wordmark
